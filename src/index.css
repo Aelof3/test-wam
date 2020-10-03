@@ -112,6 +112,22 @@ label { margin-right: 10px; }
   transition: all ease-out 0.25s;
 }
 
+.cube__face--section > img {
+  width: 50%;
+  height:50%;
+  object-fit: contain;
+  object-position: center;
+  position: absolute;
+
+}
+
+.cube__face--section > img:nth-child(1) {
+  transform: rotateX(-90deg) translateY( calc( -0.3333 * var(--d) / 4 ) );
+}
+.cube__face--section > img:nth-child(2) {
+  transform: rotateX(-90deg) rotateY(90deg) translateY( calc( -0.3333 * var(--d) / 4 ) );
+}
+
 .mousecoords {
   position: fixed;
   bottom: 2rem;
