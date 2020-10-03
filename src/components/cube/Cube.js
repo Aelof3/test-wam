@@ -8,13 +8,13 @@ class Cube extends Component {
     
     generateFaces = () => {
         return this.state.faces.map( face => {
-            <CubeFace />   
+            return (<CubeFace key={btoa(face)} face={face}/>)
         })
     }
 
     render(){
         return (
-            <div class="cube">
+            <div style={this.props.style} className="cube">
                 {this.generateFaces()}
             </div>
         )
