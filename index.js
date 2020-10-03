@@ -42,19 +42,6 @@ function getMouseDirection(e) {
         oldY = e.pageY;
         mouseMoving = true;
     }
-    //deal with the horizontal case
-    if (oldX < e.pageX) {
-        xDirection = "right";
-    } else {
-        xDirection = "left";
-    }
- 
-    //deal with the vertical case
-    if (oldY < e.pageY) {
-        yDirection = "down";
-    } else {
-        yDirection = "up";
-    }
  
     xDiff = e.pageX - oldX;
     yDiff = oldY - e.pageY;
