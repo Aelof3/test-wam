@@ -83,7 +83,6 @@ class App extends React.Component {
   }
 
   handleTouchMove = (e) => {
-    e.preventDefault();
     const eX = e.changedTouches[0].pageX;
     const eY = e.changedTouches[0].pageY;
 
