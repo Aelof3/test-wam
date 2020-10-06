@@ -34,6 +34,7 @@ import texture33 from '../images/textures/texture33.jpg';
 import texture34 from '../images/textures/texture34.jpg';
 import texture35 from '../images/textures/texture35.jpg';
 import texture36 from '../images/textures/texture36.jpg';
+import texture37 from '../images/textures/texture37.jpg';
 
 const textures = [
     texture1,
@@ -72,6 +73,7 @@ const textures = [
     texture34,
     texture35,
     texture36,
+    texture37,
 ];
 
 export default textures;

@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import marios from '../../js/marios';
-import textures from '../../js/textures';
+import faces from '../../js/faces';
 import Block from './Block';
 
 class CubeFace extends Component {
     state = {
         marios: [],
         faces: ['front','right','left','top','bottom','back'],
-        textures: textures
+        faceTextures: faces
     }
     getRandomInt = (min,max) => {
         return Math.floor(Math.random() * max + min);
@@ -19,23 +18,13 @@ class CubeFace extends Component {
                 <Block 
                     key={btoa(`${this.state.faces[n]}${i}`)}
                     faces={this.state.faces} 
-                    textures={this.state.textures} 
+                    faceTextures={this.state.faceTextures} 
                     marios={this.state.marios} 
+                    textures={this.props.textures}
                 />
             )
         })
         
-    }
-    
-    componentDidMount(){
-        const numbers = Array(marios.length).fill().map((_, index) => index);
-        numbers.sort(() => Math.random() - 0.5);
-    
-        const moleList = numbers.slice(0,9);
-        
-        this.setState({
-            marios: moleList.map( n => marios[n] )
-        })
     }
 
     render() {

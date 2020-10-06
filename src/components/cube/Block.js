@@ -4,8 +4,6 @@ import BlockFace from './BlockFace';
 class Block extends Component {
     
     state = {
-        sideTexture: 24,
-        topTexture: 35,
         hover: false,
         className: "cube__face--section"
     }
@@ -18,7 +16,7 @@ class Block extends Component {
 
     render(){
         const block_faces = this.props.faces.map( (face,i) => {
-            const t = ( i !== 5 ) ? this.props.textures[this.state.sideTexture] : this.props.textures[this.state.topTexture];
+            const t = ( i !== 5 ) ? this.props.faceTextures[this.props.textures[1]] : this.props.faceTextures[this.props.textures[0]];
             return (
                 <BlockFace 
                     key={btoa(face)}
