@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import faces from '../../js/faces';
-import Block from './Block';
+import Block from '../block/Block';
 
 class CubeFace extends Component {
     state = {

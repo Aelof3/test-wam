@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
 import Cube from './components/cube/Cube';
+import MainMenu from './components/MainMenu';
 
 class App extends React.Component {
   state = { 
     faces: ['front','right','left','top','bottom','back'],
-    face: 'front'
+    face: 'front',
+    menu: true
   }
 
   handleKeyDown = (e) => {
@@ -27,17 +29,32 @@ class App extends React.Component {
     }
   }
 
+  handleStartButton = (e) => {
+    e.preventDefault();
+    document.body.classList.remove("mainmenu--body")
+    this.setState({
+      menu: false
+    });
+  }
+
   componentDidMount(){
+    document.body.classList.add("mainmenu--body")
     window.addEventListener("keydown", (e)=>{this.handleKeyDown(e)}, false);
     window.addEventListener("keyup", (e)=>{this.handleKeyUp(e)}, false);
   }
+  
+  renderAppStage = () => {
+    if ( this.state.menu ) {
+      return <MainMenu handleStartButton={this.handleStartButton}/>
+    }
+    return <Cube cubeFace={this.state.face} style={this.state.style}/> 
+  }
 
   render(){
+    
     return (
       <div className="App" tabIndex={-1}>
-        <div className="scene">
-          <Cube cubeFace={this.state.face} style={this.state.style}/>
-        </div>
+          {this.renderAppStage()}
       </div>
     );
   }

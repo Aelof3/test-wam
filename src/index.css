@@ -29,10 +29,13 @@ body::before {
   position: absolute;
   top:0;
   left:0;
-  background-image: url('./images/terrain/terrain3.png');
+  background-image: url('./images/backgrounds/plainbackground.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+body.mainmenu--body::before {
+  background-image: url('./images/backgrounds/molesbackground.jpg');
 }
 #root, .App {
   width: 100%;
@@ -46,6 +49,20 @@ body::before {
 .App {
   z-index: 10000;
 }
+
+.section--row {
+  display: flex;
+  flex-flow: row;
+}
+
+.section--column {
+  display: flex;
+  flex-flow:column;
+}
+
+
+
+
 
 .scene {
   width: var(--d);
@@ -229,4 +246,47 @@ label { margin-right: 10px; }
 .cube__face--section--hover .mole img {
   transform: translateZ( calc( 0.25 * var(--d) / 3 ) ) rotateX(-90deg) rotateY(90deg);
   transition: transform ease-out 0.5s;
+}
+
+
+form.mainmenu button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: transform ease-in-out 0.15s;
+}
+
+form.mainmenu button:hover {
+  transform: rotateZ(-5deg) scale(1.1);
+  transition: transform ease-in-out 0.15s;
+}
+
+form.mainmenu .section--row, form.mainmenu .section--column {
+  align-items: center;
+  justify-content: center;
+}
+form.mainmenu div img {
+  flex: 0;
+}
+
+.img--hammer {
+  transform: scaleX(-1);
+  margin-right: -5rem;
+}
+.img--logo {
+  transform: rotateZ(-7deg) scale(1.5);
+}
+.img--3d {
+  margin-top:-5rem;
+  margin-right:25rem;
+  align-self: flex-end;
+  transform: scale(1.5);
+}
+
+form.mainmenu .section--column {
+  margin-top:5rem;
+}
+form.mainmenu .section--row {
+  margin-top:-15rem;
 }
