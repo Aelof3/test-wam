@@ -290,3 +290,53 @@ form.mainmenu .section--column {
 form.mainmenu .section--row {
   margin-top:-15rem;
 }
+
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-flow: row;
+}
+
+form ~ div.gui--wrap {
+  display: none;
+}
+div.gui--wrap {
+  position: absolute;
+  bottom: 4rem;
+}
+
+div.gui--wrap ul li {
+  margin:0.5rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+div.gui--wrap ul li button{
+  padding:1.5rem 3rem;
+  font-size: 3rem;
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+div.gui--wrap ul li:nth-child(1){
+  background-image: url('./images/faces/face1a.jpg');
+}
+div.gui--wrap ul li:nth-child(2){
+  background-image: url('./images/faces/face2a.jpg');
+}
+div.gui--wrap ul li:nth-child(3){
+  background-image: url('./images/faces/face3a.jpg');
+}
+div.gui--wrap ul li:nth-child(4){
+  background-image: url('./images/faces/face4a.jpg');
+}
+div.gui--wrap ul li:nth-child(5){
+  background-image: url('./images/faces/face5a.jpg');
+}
+div.gui--wrap ul li:nth-child(6){
+  background-image: url('./images/faces/face6a.jpg');
+}

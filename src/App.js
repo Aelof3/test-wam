@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Cube from './components/cube/Cube';
 import MainMenu from './components/MainMenu';
+import GUI from './components/GUI';
 
 class App extends React.Component {
   state = { 
@@ -12,6 +13,10 @@ class App extends React.Component {
 
   handleKeyDown = (e) => {
     if ( ["1","2","3","4","5","6"].includes(e.key) ) this.handleNumkeyPress(e.key);
+  }
+
+  handleButtonClick = (num) => {
+    if ( ["1","2","3","4","5","6"].includes(num) ) this.handleNumkeyPress(num);
   }
 
   handleNumkeyPress = (key) => {
@@ -47,7 +52,7 @@ class App extends React.Component {
     if ( this.state.menu ) {
       return <MainMenu handleStartButton={this.handleStartButton}/>
     }
-    return <Cube cubeFace={this.state.face} style={this.state.style}/> 
+    return <Cube handleButtonClick={this.handleButtonClick} cubeFace={this.state.face} style={this.state.style}/> 
   }
 
   render(){
@@ -55,6 +60,7 @@ class App extends React.Component {
     return (
       <div className="App" tabIndex={-1}>
           {this.renderAppStage()}
+          <GUI handleButtonClick={this.handleButtonClick} />
       </div>
     );
   }
