@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import BlockFace from './BlockFace';
+import moles from '../../js/moles';
 
 class Block extends Component {
     
@@ -33,6 +34,9 @@ class Block extends Component {
             >
                 <div className="block">
                     {block_faces}
+                </div>
+                <div className="mole">
+                    <img alt="mole" src={moles[18]} />
                 </div>
             </div>
         )
