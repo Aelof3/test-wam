@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Cube from './components/cube/Cube';
 import MainMenu from './components/MainMenu';
-import GUI from './components/GUI';
+import GUI from './components/gui/GUI';
 
 class App extends React.Component {
   state = { 
