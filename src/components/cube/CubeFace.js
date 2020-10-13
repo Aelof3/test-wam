@@ -17,10 +17,12 @@ class CubeFace extends Component {
             return (
                 <Block 
                     key={btoa(`${this.state.faces[n]}${i}`)}
+                    i={i}
                     faces={this.state.faces} 
+                    face={this.props.face}
                     faceTextures={this.state.faceTextures} 
-                    marios={this.state.marios} 
                     textures={this.props.textures}
+                    moles={this.props.moles}
                 />
             )
         })

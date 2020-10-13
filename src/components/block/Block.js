@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import BlockFace from './BlockFace';
-//import moles from '../../js/moles';
+import Mole from '../mole/Mole';
 
 class Block extends Component {
     
@@ -28,16 +28,14 @@ class Block extends Component {
         })
         return (
             <div 
-                onMouseOut={()=>this.handleOnMouseOver(false)}
-                onMouseOver={()=>this.handleOnMouseOver(true)}
+/*                 onMouseOut={()=>this.handleOnMouseOver(false)}
+                onMouseOver={()=>this.handleOnMouseOver(true)} */
                 className={this.state.className}
             >
                 <div className="block">
                     {block_faces}
                 </div>
-                <div className="mole">
-                    <div alt="img" className="mole--sprite"></div>
-                </div>
+                <Mole mole={this.props.moles[this.props.i]} />
             </div>
         )
     }

@@ -8,8 +8,10 @@ class GUI extends Component {
             return (
                 <GUI_BUTTON_ROTATECUBE 
                     key={`${num}${i}`} 
+                    id={i}
                     num={num}
                     handleButtonClick={this.props.handleButtonClick}
+                    face={this.props.face}
                 />
             )
         })
