@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import faces from '../../js/faces';
+import faceTextureFile from '../../js/faces';
 import Block from '../block/Block';
+import MOLE_CONTEXT from '../context/MoleContext';
 
 class CubeFace extends Component {
+    static contextType = MOLE_CONTEXT;
+
     state = {
-        marios: [],
-        faces: ['front','right','left','top','bottom','back'],
-        faceTextures: faces
+        faceTextures: faceTextureFile
     }
+
     getRandomInt = (min,max) => {
         return Math.floor(Math.random() * max + min);
     }
@@ -16,9 +18,8 @@ class CubeFace extends Component {
         return Array(9).fill().map( (n,i)=> {
             return (
                 <Block 
-                    key={btoa(`${this.state.faces[n]}${i}`)}
+                    key={btoa(`${this.context.faces[n]}${i}`)}
                     i={i}
-                    faces={this.state.faces} 
                     face={this.props.face}
                     faceTextures={this.state.faceTextures} 
                     textures={this.props.textures}

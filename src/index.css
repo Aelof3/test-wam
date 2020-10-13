@@ -250,12 +250,12 @@ label { margin-right: 10px; }
   outline: none;
   cursor: pointer;
   transition: transform ease-in-out 0.15s;
-  flex: 2;
+  flex: 3;
   width:100%;
 }
 
 .mainmenu a img {
-  width: 100%;
+  width: 90%;
   object-fit: contain;
   object-position: center;
 }
@@ -271,11 +271,11 @@ label { margin-right: 10px; }
 }
 
 .mainmenu .section--column .section--row{
-  margin-top: calc(1rem + 0.5vw);
+  margin-top: -5rem;
 }
 
 .img--wrap {
-  flex: 1;
+  flex: 2;
 }
 .img--hammer {
   flex: 1;
@@ -284,6 +284,7 @@ label { margin-right: 10px; }
   width: 100%;
 }
 .img--logo {
+  width: 100%;
   max-width: 750px;
   transform: rotateZ(-7deg);
 }
@@ -413,9 +414,19 @@ div.gui--wrap ul li:nth-child(6){
   background: none;
   background-size: 600% 800%;
   transform: translateZ( calc( -1 * var(--d) / 3 ) ) rotateX(-90deg) rotateY(90deg);
-  transition: transform ease-out 0.15s;
+  transition-property: transform;
+  transition-delay: 0.5s;
   animation-duration: 0.5s;
   animation-name: moleDown;
+  animation-fill-mode: forwards;
+}
+
+.mole--sprite.bonked {
+  transform: translateZ( calc( -1 * var(--d) / 3 ) ) rotateX(-90deg) rotateY(90deg);
+  transition-property: transform;
+  transition-delay: 0.5s;
+  animation-duration: 0.5s;
+  animation-name: moleBonked;
   animation-fill-mode: forwards;
 }
 
@@ -424,7 +435,7 @@ div.gui--wrap ul li:nth-child(6){
   background: none;
   background-size: 600% 800%;
   transform: translateZ( calc( 0.25 * var(--d) / 3 ) ) rotateX(-90deg) rotateY(90deg);
-  transition: transform ease-out 0.15s;
+  animation-delay: 0.5s;
   animation-duration: 0.5s;
   animation-name: moleUp;
   animation-fill-mode: forwards;
@@ -545,11 +556,11 @@ div.gui--wrap ul li:nth-child(6){
     background-size: 600% 800%;
   }
   16.05% {
-    background: url('./images/sprites/moles/output.png') 100% -600%;
+    background: url('./images/sprites/moles/output.png') -100% -600%;
     background-size: 600% 800%;
   }
   33% {
-    background: url('./images/sprites/moles/output.png') 100% -600%;
+    background: url('./images/sprites/moles/output.png') -100% -600%;
     background-size: 600% 800%;
   }
   33.05% {

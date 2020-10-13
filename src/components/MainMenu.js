@@ -8,7 +8,7 @@ import hammer from '../images/things/hammer3.png';
 class MainMenu extends Component {
     render(){
         return (
-            <section className="mainmenu">   
+            <section className="mainmenu" >
                 <div className="section--column">
                     <img className="img--logo" alt="logo" src={logo} />
                     <img className="img--3d" alt="3d" src={threeD} />

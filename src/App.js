@@ -3,18 +3,22 @@ import { Route } from 'react-router-dom';
 import Cube from './components/cube/Cube';
 import MainMenu from './components/MainMenu';
 import GUI from './components/gui/GUI';
-import MoleObject from './js/MoleObject';
+import MOLE_CONTEXT from './components/context/MoleContext';
+import MOLEPROVIDER from './components/context/MoleProvider';
 
 class App extends React.Component {
+  static contextType = MOLE_CONTEXT;
+
   state = { 
-    faces: ['front','right','left','top','bottom','back'],
+    faces: this.context.faces,
     face: 'front',
-    menu: true,
-    moles: [],
-    step: false
+    menu: false,
+    moles: this.context.moles,
+    step: false,
   }
 
   handleEvent = (num) => {
+    // this handles both keypresses and clicking the buttons
     if ( ["1","2","3","4","5","6"].includes(num) ) this.handleNumkeyPress(num);
   }
 
@@ -24,62 +28,83 @@ class App extends React.Component {
     })
   }
 
+  popUpMole = (moles,m) => {
+    moles[m].burrowed = false;
+    this.setState({
+      moles: moles
+    });
+    setTimeout( ()=>{
+        moles[m].burrowed = true;
+        this.setState({
+          moles: moles
+        });
+    }, 4000 )
+  }
+
   stepSequence = ( ) => {
     // create sequence to randomly pop moles up
     const burrowedMoles = this.state.moles.filter( mole => mole.burrowed ).map( mole => mole.i );
-    const n = this.getRandomInt(0,burrowedMoles.length - 1);
-    const m = burrowedMoles[n];
-    this.state.moles[m].popUp();
-    this.setState({
-      step: !this.state.step
-    })
+    const m = burrowedMoles[this.getRandomInt(0,burrowedMoles.length - 1)];
+    const tempMoles = this.state.moles;
+    this.popUpMole(tempMoles,m);
   }
   
   getRandomInt = (min,max) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
-  
-  createMoles = ( ) => {
-    // create 54 mole objects, one for each block
-    const moles = Array.from( { length: 54 }, ( m, i ) => new MoleObject( i ) )
-    this.setState({
-      moles
-    });
-  }
 
-  componentDidMount(){
-    this.createMoles();
-    document.body.classList.add("mainmenu--body")
-    window.addEventListener("keydown", (e)=>{this.handleEvent(e.key)}, false);
+  gameStart = () => {
     this.setState({
       interval: setInterval( ()=>{
         this.stepSequence();
-      },2000)
+      },500)
     })
+  }
+
+  menuSwitch = () => {
+    if ( this.state.menu ) return;
+    this.setState({menu: true})
+  }
+
+  componentDidMount(){
+    document.body.classList.add("mainmenu--body")
+    window.addEventListener("keydown", (e)=>{this.handleEvent(e.key)}, false);
+  }
+
+  componentWillUnmount(){
+    clearInterval(this.state.interval);
   }
 
   render(){
     return (
-      <div className="App" tabIndex={-1}>
-          <Route 
-            exact 
-            path="/" 
-            render={()=><MainMenu />} />
-          <Route 
-            exact 
-            path="/app" 
-            render={()=><Cube 
-                    handleButtonClick={this.handleEvent} 
-                    cubeFace={this.state.face} 
-                    style={this.state.style}
-                    moles={this.state.moles}
-                    /> } />
-          <Route 
-            exact 
-            path="/app" 
-            render={()=><GUI handleButtonClick={this.handleEvent} face={this.state.face} />}
-          />
-      </div>
+      <MOLEPROVIDER
+        faces={this.state.faces}
+        textures={this.context.textures}
+        moleLayout={this.context.moleLayout}
+        moles={this.state.moles}
+      >
+        <div className="App" tabIndex={-1}>
+            <Route 
+              exact 
+              path="/" 
+              render={()=><MainMenu />} />
+            <Route 
+              exact 
+              path="/app" 
+              render={()=><Cube 
+                      handleButtonClick={this.handleEvent} 
+                      handleGameStart={this.gameStart}
+                      cubeFace={this.state.face} 
+                      style={this.state.style}
+                      moles={this.state.moles}
+                      /> } />
+            <Route 
+              exact 
+              path="/app" 
+              render={()=><GUI handleButtonClick={this.handleEvent} face={this.state.face} />}
+            />
+        </div>
+      </MOLEPROVIDER>
     );
   }
 }

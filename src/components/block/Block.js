@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import BlockFace from './BlockFace';
 import Mole from '../mole/Mole';
+import MOLE_CONTEXT from '../context/MoleContext';
 
 class Block extends Component {
+    static contextType = MOLE_CONTEXT;
     
     state = {
         hover: false,
@@ -15,8 +17,8 @@ class Block extends Component {
         })
     }
 
-    render(){
-        const block_faces = this.props.faces.map( (face,i) => {
+    generateBlockFaces = () => {
+        return this.context.faces.map( (face,i) => {
             const t = ( i !== 5 ) ? this.props.faceTextures[this.props.textures[1]] : this.props.faceTextures[this.props.textures[0]];
             return (
                 <BlockFace 
@@ -26,14 +28,18 @@ class Block extends Component {
                 />
             )
         })
+    }
+
+    render(){
         return (
             <div 
 /*                 onMouseOut={()=>this.handleOnMouseOver(false)}
                 onMouseOver={()=>this.handleOnMouseOver(true)} */
+                onClick={()=>this.context.bonkMole(this.props.moles[this.props.i])}
                 className={this.state.className}
             >
                 <div className="block">
-                    {block_faces}
+                    {this.generateBlockFaces()}
                 </div>
                 <Mole mole={this.props.moles[this.props.i]} />
             </div>
