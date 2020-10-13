@@ -38,7 +38,7 @@ class App extends React.Component {
         this.setState({
           moles: moles
         });
-    }, 4000 )
+    }, 7000 )
   }
 
   stepSequence = ( ) => {
@@ -57,7 +57,7 @@ class App extends React.Component {
     this.setState({
       interval: setInterval( ()=>{
         this.stepSequence();
-      },500)
+      },3000)
     })
   }
 

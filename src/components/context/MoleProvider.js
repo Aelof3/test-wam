@@ -16,20 +16,19 @@ class MOLEPROVIDER extends Component {
             return m;
         } );
         this.setState({
-            moles
+            moles: moles
         });
-        console.log( mole.i, "bonked!")
 
         setTimeout( ()=>{
             const molesAfter = this.state.moles.map( m => {
                 if ( m.i !== mole.i ) return m;
                 m.bonked = false;
+                m.burrowed = true;
                 return m;
             } );
             this.setState({
-                molesAfter
+                moles: molesAfter
             });
-            console.log( mole.i, "bonk-gone")
         }, 500 )
     }
     render(){
