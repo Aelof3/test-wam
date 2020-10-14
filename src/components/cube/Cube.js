@@ -20,11 +20,6 @@ class Cube extends Component {
         })
     }
 
-    componentDidMount(){
-        console.log("Starting sequence.");
-        this.props.handleGameStart();
-    }
-
     render(){
         return (
             <div className="scene">

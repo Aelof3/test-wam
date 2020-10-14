@@ -392,8 +392,12 @@ div.hud--wrap {
   position: absolute;
   width: 100%;
   top: 2rem; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-div.hud--wrap .hud--points {
+div.hud--wrap .hud--text {
+  flex:1;
   color: #fff;
   font-weight: bold;
   padding: 1rem;
@@ -401,7 +405,14 @@ div.hud--wrap .hud--points {
   text-align: center;
 }
 
-
+div.countdown {
+  color: #0f0;
+  text-shadow: 0px 0px 24px #222;
+  font-size: 25rem;
+  position: fixed;
+  top:calc(50% - 10rem);
+  left:calc(50% - 10rem);
+}
 /* animated sprites */
 
 .mole {

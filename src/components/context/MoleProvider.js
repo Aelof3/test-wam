@@ -8,7 +8,9 @@ class MOLEPROVIDER extends Component {
         textures: this.props.textures,
         moleLayout: this.props.moleLayout,
         moles: this.props.moles,
-        points: 0
+        points: 0,
+        popupDuration: 5000,
+        popupInterval: 1000
     }
     bonkMole = (mole) => {
         const p = mole.burrowed || mole.bonked ? 0 : 1;
@@ -34,11 +36,51 @@ class MOLEPROVIDER extends Component {
             });
         }, 500 )
     }
+
+    popUpMole = (moles,m) => {
+        moles[m].burrowed = false;
+        this.setState({
+        moles: moles
+        });
+        setTimeout( ()=>{
+            moles[m].burrowed = true;
+            this.setState({
+            moles: moles
+            });
+        }, this.state.popupDuration )
+    }
+
+    stepSequence = ( ) => {
+        // create sequence to randomly pop moles up
+        const burrowedMoles = this.state.moles.filter( mole => mole.burrowed ).map( mole => mole.i );
+        const m = burrowedMoles[this.getRandomInt(0,burrowedMoles.length - 1)];
+        const tempMoles = this.state.moles;
+        this.popUpMole(tempMoles,m);
+    }
+    
+    getRandomInt = (min,max) => {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    gameStart = () => {
+        this.setState({
+            interval: setInterval( ()=>{
+                this.stepSequence();
+            },this.state.popupInterval)
+        })
+    }
+
+    gameEnd = () => {
+        clearInterval( this.state.interval );
+    }
+
     render(){
         return (
             <MOLE_CONTEXT.Provider value={{
                 ...this.state,
-                bonkMole: this.bonkMole
+                bonkMole: this.bonkMole,
+                gameStart: this.gameStart,
+                gameEnd: this.gameEnd,
             }}>
                 {this.props.children}
             </MOLE_CONTEXT.Provider>
