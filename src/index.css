@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 
 :root {
-  --d: 210px;
+  --d: 300px;
   --mw: -190px;
   --mh: -144px;
 }
@@ -27,7 +27,7 @@ body {
   margin: 0 auto;
   width: 100vw;
   height: 100vh;
-  max-width: 800px;
+  max-width: 1024px;
   font-family: sans-serif;
   margin: 0;
   padding: 0;
@@ -107,13 +107,13 @@ body.mainmenu--body::before {
   transform: translateZ(calc(0.5 * var(--d) )) rotateX(45deg) rotateY(0deg) rotateZ(45deg); 
 }
 .cube.show-right  { 
-  transform: translateZ(calc(0.5 * var(--d) ))  rotateX(-45deg) rotateY(-45deg) rotateZ(-90deg); /* rotateY( -90deg); */
+  transform: translateZ(calc(0.5 * var(--d) ))  rotateX(-45deg) rotateY(45deg) rotateZ(-90deg); /* rotateY( -90deg); */
 }
 .cube.show-left   { 
-  transform: translateZ(calc(0.5 * var(--d) ))  rotateX(-45deg) rotateY(45deg) rotateZ(90deg); /*rotateY(  90deg); */
+  transform: translateZ(calc(0.5 * var(--d) ))  rotateX(-45deg) rotateY(-45deg) rotateZ(90deg); /*rotateY(  90deg); */
 }
 .cube.show-top    { 
-  transform: translateZ(calc(0.5 * var(--d) ))  rotateX(-45deg) rotateY(45deg); /*rotateX( -90deg); */
+  transform: translateZ(calc(0.5 * var(--d) ))  rotateX(-45deg) rotateY(135deg); /*rotateX( -90deg); */
 }
 .cube.show-bottom { 
   transform: translateZ(calc(0.5 * var(--d) ))  rotateX(135deg) rotateY(-45deg); /*rotateX(  90deg); */
@@ -312,7 +312,7 @@ form ~ div.gui--wrap {
 div.gui--wrap {
   position: absolute;
   width: 100%;
-  bottom: 2rem;
+  bottom: 3rem;
 }
 
 
@@ -375,7 +375,31 @@ div.gui--wrap ul li:nth-child(6){
   background-image: url('./images/faces/face6a.jpg');
 }
 
+div.gui--wrap ul li div.mole--dot {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 15px;
+  height: 15px;
+  background: rgba(255,0,0,0.85);
+  box-shadow: 0px 0px 15px #f00;
+  border-radius: 50%;
+}
 
+
+
+div.hud--wrap {
+  position: absolute;
+  width: 100%;
+  top: 2rem; 
+}
+div.hud--wrap .hud--points {
+  color: #fff;
+  font-weight: bold;
+  padding: 1rem;
+  font-size:3rem;
+  text-align: center;
+}
 
 
 /* animated sprites */
@@ -594,5 +618,16 @@ div.gui--wrap ul li:nth-child(6){
   100% {
     background: url('./images/sprites/moles/output.png') -200% -700%;
     background-size: 600% 800%;
+  }
+}
+
+
+
+@media all and (min-width: 1024px){ 
+  :root {
+    --d: 210px; 
+  }
+  body {
+    max-width: 800px;
   }
 }

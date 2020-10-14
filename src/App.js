@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import Cube from './components/cube/Cube';
 import MainMenu from './components/MainMenu';
 import GUI from './components/gui/GUI';
+import HUD from './components/hud/HUD';
 import MOLE_CONTEXT from './components/context/MoleContext';
 import MOLEPROVIDER from './components/context/MoleProvider';
 
@@ -102,6 +103,11 @@ class App extends React.Component {
               exact 
               path="/app" 
               render={()=><GUI handleButtonClick={this.handleEvent} face={this.state.face} />}
+            />
+            <Route 
+              exact 
+              path="/app" 
+              render={()=><HUD />}
             />
         </div>
       </MOLEPROVIDER>

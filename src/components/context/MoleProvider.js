@@ -8,15 +8,18 @@ class MOLEPROVIDER extends Component {
         textures: this.props.textures,
         moleLayout: this.props.moleLayout,
         moles: this.props.moles,
+        points: 0
     }
     bonkMole = (mole) => {
+        const p = mole.burrowed || mole.bonked ? 0 : 1;
         const moles = this.state.moles.map( m => {
             if ( m.i !== mole.i ) return m;
             m.bonked = true;
             return m;
         } );
         this.setState({
-            moles: moles
+            moles: moles,
+            points: this.state.points + p
         });
 
         setTimeout( ()=>{
