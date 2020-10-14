@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import Cube from './components/cube/Cube';
-import ModeSurvival from './components/gametypes/ModeSurvival';
+import ModeRanked from './components/gametypes/ModeRanked';
 import MainMenu from './components/MainMenu';
 import GUI from './components/gui/GUI';
 import MOLE_CONTEXT from './components/context/MoleContext';
@@ -50,10 +50,10 @@ class App extends React.Component {
             <Route 
               exact 
               path="/app" 
-              render={()=><ModeSurvival >
+              render={()=><ModeRanked >
                   <Cube cubeFace={this.state.face} />
                   <GUI handleButtonClick={this.handleEvent} face={this.state.face} />
-                </ModeSurvival> } />
+                </ModeRanked> } />
         </div>
       </MOLEPROVIDER>
     );

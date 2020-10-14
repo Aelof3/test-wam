@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import MOLE_CONTEXT from '../context/MoleContext';
 import HUD from '../hud/HUD';
 
-class ModeSurvival extends Component {
+class ModeRanked extends Component {
     static contextType = MOLE_CONTEXT;
 
     state = {
@@ -90,4 +90,4 @@ class ModeSurvival extends Component {
     }
 }
 
-export default ModeSurvival;
+export default ModeRanked;
