@@ -15,3 +15,11 @@ ___
 
 *Red dots in the corner of the bottom buttons indicate at least one mole present on that side*
 ![img2](readme_img_2.jpg)  
+___  
+
+- add back end for leaderboard
+- make styles look nice
+- possibly switch out sprites for custom versions
+- revisit the individual components and try to minimize rendering
+- add survival mode
+- add seeded randomization
