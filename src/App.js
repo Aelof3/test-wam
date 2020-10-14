@@ -45,11 +45,11 @@ class App extends React.Component {
         <div className="App" tabIndex={-1}>
             <Route 
               exact 
-              path="/" 
+              path="/test-wam" 
               render={()=><MainMenu />} />
             <Route 
               exact 
-              path="/app" 
+              path="/test-wam/app" 
               render={()=><ModeSurvival >
                   <Cube cubeFace={this.state.face} />
                   <GUI handleButtonClick={this.handleEvent} face={this.state.face} />
