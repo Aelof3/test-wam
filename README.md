@@ -17,6 +17,7 @@ ___
 ![img2](readme_img_2.jpg)  
 ___  
 
+### To-do:
 - add back end for leaderboard
 - make styles look nice
 - possibly switch out sprites for custom versions
