@@ -19,7 +19,6 @@ ___
 
 ### To-do:
 - add back end for leaderboard
-- make styles look nice
 - possibly switch out sprites for custom versions
 - revisit the individual components and try to minimize rendering
 - add survival mode
