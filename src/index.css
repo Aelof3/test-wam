@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 
 :root {
-  --d: 300px;
+  --d: 18rem;
   --mw: -190px;
   --mh: -144px;
 }
@@ -14,7 +14,7 @@
 }
 
 html {
-  font-size: calc(0.5vw + 6px);
+  font-size: calc(0.3vw + 7px);
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -722,7 +722,7 @@ div.countdown {
 
 @media all and (min-width: 1024px){ 
   :root {
-    --d: 210px; 
+    --d: 15rem; 
   }
   body {
     max-width: 800px;
