@@ -68,6 +68,8 @@ class ModeRanked extends Component {
     }
 
     componentDidMount(){
+        const h = document.querySelector('html');
+        h.requestFullscreen();
         // run countdown then context gameStart
         this.countdown(()=>{
             clearInterval( this.state.interval );
