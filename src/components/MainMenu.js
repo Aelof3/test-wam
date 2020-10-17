@@ -14,7 +14,7 @@ class MainMenu extends Component {
                     <img className="img--3d" alt="3d" src={threeD} />
                     <div className="section--row">
                         <div className="img--wrap"><img className="img--hammer" alt="hammer" src={hammer} /></div>
-                        <Link to="/app">
+                        <Link to="/test-wam/app">
                             <img className="img--startbutton" alt="startbutton" src={startbutton} />
                         </Link>
                     </div>

@@ -23,7 +23,7 @@ class Cube extends Component {
     render(){
         return (
             <div className="scene">
-                <div className={`cube show-${this.props.cubeFace}`}>
+                <div className={`cube ${this.context.prefaceClass ? 'preface':''} show-${this.props.cubeFace}`}>
                     {this.generateFaces()}
                 </div>
             </div>

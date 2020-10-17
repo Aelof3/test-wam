@@ -16,7 +16,6 @@ class ModeRanked extends Component {
         this.setState({
             interval: setInterval(()=>{
                 if (this.state.countdown > 0) {
-                    console.log(this.state.countdown)
                     this.setState({
                         countdown: this.state.countdown - 1
                     })
@@ -65,7 +64,7 @@ class ModeRanked extends Component {
     endOfGame = () => {
         // generate end of game menu
         this.context.gameEnd();
-        alert('end');
+        alert(`It took you ${this.state.timer} seconds to bonk all the moles!`);
     }
 
     componentDidMount(){

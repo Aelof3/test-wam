@@ -10,7 +10,8 @@ class MOLEPROVIDER extends Component {
         moles: this.props.moles,
         points: 0,
         popupDuration: 5000,
-        popupInterval: 1000
+        popupInterval: 1000,
+        prefaceClass: true
     }
     bonkMole = (mole) => {
         const p = mole.burrowed || mole.bonked ? 0 : 1;
@@ -64,6 +65,7 @@ class MOLEPROVIDER extends Component {
 
     gameStart = () => {
         this.setState({
+            prefaceClass: false,
             interval: setInterval( ()=>{
                 this.stepSequence();
             },this.state.popupInterval)

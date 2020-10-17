@@ -69,12 +69,11 @@ const moleLayout = {
     }
 }
 
-
 const MOLE_CONTEXT = React.createContext({
     faces: faces,
     textures: textures,
     moleLayout: moleLayout,
-    moles: moles,
+    moles: moles
 })
 
 export default MOLE_CONTEXT;
