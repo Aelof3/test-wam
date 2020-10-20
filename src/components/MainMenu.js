@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import startbutton from '../images/logo/startbutton2.png';
 import logo from '../images/logo/logo8.png';
 import threeD from '../images/logo/3D5.png';
 import hammer from '../images/things/hammer3.png';
 
 class MainMenu extends Component {
+
+    componentDidMount(){
+        let self = this;
+        window.addEventListener('click',function(e){
+            const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+            if (isFirefox) self.props.history.replace('/test-wam/app');
+        })
+    }
     render(){
         return (
             <section className="mainmenu" >
@@ -24,4 +32,4 @@ class MainMenu extends Component {
     }
 }
 
-export default MainMenu;
+export default withRouter(MainMenu);

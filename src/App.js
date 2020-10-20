@@ -6,6 +6,8 @@ import MainMenu from './components/MainMenu';
 import GUI from './components/gui/GUI';
 import MOLE_CONTEXT from './components/context/MoleContext';
 import MOLEPROVIDER from './components/context/MoleProvider';
+import Leaderboard from './components/leaderboard/Leaderboard';
+import LeaderboardForm from './components/leaderboard/LeaderboardForm';
 
 class App extends React.Component {
   static contextType = MOLE_CONTEXT;
@@ -30,6 +32,7 @@ class App extends React.Component {
   }
 
   componentDidMount(){
+    console.log(this);
     document.body.classList.add("mainmenu--body")
     window.addEventListener("keydown", (e)=>{this.handleEvent(e.key)}, false);
   }
@@ -54,6 +57,16 @@ class App extends React.Component {
                   <Cube cubeFace={this.state.face} />
                   <GUI handleButtonClick={this.handleEvent} face={this.state.face} />
                 </ModeRanked> } />
+            <Route 
+              exact
+              path="/test-wam/leaderboard"
+              render={()=><Leaderboard />}
+            />
+            <Route 
+              exact
+              path="/test-wam/leaderboard/form"
+              render={()=><LeaderboardForm />}
+            />
         </div>
       </MOLEPROVIDER>
     );

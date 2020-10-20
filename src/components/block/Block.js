@@ -33,8 +33,6 @@ class Block extends Component {
     render(){
         return (
             <div 
-/*                 onMouseOut={()=>this.handleOnMouseOver(false)}
-                onMouseOver={()=>this.handleOnMouseOver(true)} */
                 onClick={()=>this.context.bonkMole(this.props.moles[this.props.i])}
                 className={this.state.className}
             >

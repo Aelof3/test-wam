@@ -11,7 +11,9 @@ class MOLEPROVIDER extends Component {
         points: 0,
         popupDuration: 5000,
         popupInterval: 1000,
-        prefaceClass: true
+        prefaceClass: true,
+        timer: 0,
+        RESTAPI: 'http://localhost:8000'
     }
     bonkMole = (mole) => {
         const p = mole.burrowed || mole.bonked ? 0 : 1;
@@ -58,6 +60,12 @@ class MOLEPROVIDER extends Component {
         const tempMoles = this.state.moles;
         this.popUpMole(tempMoles,m);
     }
+
+    setFinalTime = ( time ) => {
+        this.setState({
+            timer: time
+        })
+    }
     
     getRandomInt = (min,max) => {
         return Math.floor(Math.random() * (max - min + 1) + min);
@@ -83,6 +91,7 @@ class MOLEPROVIDER extends Component {
                 bonkMole: this.bonkMole,
                 gameStart: this.gameStart,
                 gameEnd: this.gameEnd,
+                setFinalTime: this.setFinalTime
             }}>
                 {this.props.children}
             </MOLE_CONTEXT.Provider>

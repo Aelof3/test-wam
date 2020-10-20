@@ -194,6 +194,8 @@ label { margin-right: 10px; }
   height: 100%;
   display: flex;
   flex-flow: row;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
 }
 
 .cube__face--section .block__face:not(.block__face--back) {
@@ -210,7 +212,7 @@ label { margin-right: 10px; }
   transform: rotateY( 90deg) translateZ( calc( -0.5 * var(--d) / 3 ) ); 
 }
 .block__face--back   { 
-  transform: rotateY(180deg) translateZ( calc( -0.5 * var(--d) / 3 ) ); 
+  transform: translateZ( calc( 0.5 * var(--d) / 3 ) ); 
 }
 .block__face--left   { 
   transform: rotateY(-90deg) translateZ( calc( -0.5 * var(--d) / 3 ) ); 

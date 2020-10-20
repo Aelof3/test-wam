@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import MOLE_CONTEXT from '../context/MoleContext';
 import HUD from '../hud/HUD';
 
@@ -64,7 +65,8 @@ class ModeRanked extends Component {
     endOfGame = () => {
         // generate end of game menu
         this.context.gameEnd();
-        alert(`It took you ${this.state.timer} seconds to bonk all the moles!`);
+        this.context.setFinalTime( this.state.timer );
+        this.props.history.replace('/test-wam/leaderboard/form');
     }
 
     componentDidMount(){
@@ -91,4 +93,4 @@ class ModeRanked extends Component {
     }
 }
 
-export default ModeRanked;
+export default withRouter(ModeRanked);
