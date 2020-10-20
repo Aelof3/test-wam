@@ -13,7 +13,8 @@ class MOLEPROVIDER extends Component {
         popupInterval: 1000,
         prefaceClass: true,
         timer: 0,
-        RESTAPI: 'http://localhost:8000'
+        //RESTAPI: 'http://localhost:8000'
+        RESTAPI: 'https://floating-crag-15121.herokuapp.com'
     }
     bonkMole = (mole) => {
         const p = mole.burrowed || mole.bonked ? 0 : 1;
