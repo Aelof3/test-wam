@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import startbutton from '../images/logo/startbutton2.png';
+import leaderboard from '../images/logo/leaderboard1.png';
 import logo from '../images/logo/logo8.png';
 import threeD from '../images/logo/3D5.png';
 import hammer from '../images/things/hammer3.png';
@@ -24,6 +25,11 @@ class MainMenu extends Component {
                         <div className="img--wrap"><img className="img--hammer" alt="hammer" src={hammer} /></div>
                         <Link to="/test-wam/app">
                             <img className="img--startbutton" alt="startbutton" src={startbutton} />
+                        </Link>
+                    </div>
+                    <div className="section--row leaderboard--wrap">
+                        <Link to="/test-wam/leaderboard">
+                            <img className="img--leaderboard" alt="leaderboard" src={leaderboard} />
                         </Link>
                     </div>
                 </div>

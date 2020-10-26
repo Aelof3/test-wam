@@ -31,12 +31,20 @@ class Leaderboard extends Component {
     render(){
         const scores = (typeof this.state.scores === "object") ? this.state.scores : [];
         return(<>
-            {scores.map(score=>{
-                return <div key={score.score_id}>
-                    <p>User: {score.user_name} | Score: {score.score}</p>
-                </div>
-            })}
+            <ol className="leaderboard--wrapper">
+                <li className="leaderboard--item">
+                    <div className="leaderboard--item--header--users">Players</div>
+                    <div className="leaderboard--item--header--scores">Scores</div>
+                </li>
+                {scores.map(score=>{
+                    return <li className="leaderboard--item" key={score.score_id}>
+                        <div className="leaderboard--item--user">{score.user_name}</div>
+                        <div className="leaderboard--item--score">{score.score}</div>
+                    </li>
+                })}
+            </ol>
             <button
+                className="leaderboard--button--back"
                 onClick={this.handleClick}
             >back</button>
         </>)

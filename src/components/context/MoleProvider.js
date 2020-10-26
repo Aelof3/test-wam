@@ -11,7 +11,7 @@ class MOLEPROVIDER extends Component {
         points: 0,
         popupDuration: 5000,
         popupInterval: 1000,
-        moleCount: 10,
+        moleCount: 100,
         prefaceClass: true,
         timer: 0,
         //RESTAPI: 'http://localhost:8000'

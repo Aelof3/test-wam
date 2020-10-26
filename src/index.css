@@ -1,4 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+/* font-family: 'Syne Mono', monospace; */
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+/* font-family: 'Special Elite', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
+/* font-family: 'Rye', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Frijole&display=swap');
+/* font-family: 'Frijole', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Piedra&display=swap');
+/* font-family: 'Piedra', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Barrio&display=swap');
+/* font-family: 'Barrio', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Lacquer&display=swap');
+/* font-family: 'Lacquer', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Hanalei&display=swap');
+/* font-family: 'Hanalei', cursive; */
+
 
 :root {
   --d: 18rem;
@@ -241,6 +258,101 @@ label { margin-right: 10px; }
 /* ************************* */
 
 
+
+/* leaderboards */
+
+ol.leaderboard--wrapper {
+  width: 80%;
+  max-width: 450px;
+}
+ol.leaderboard--wrapper li{
+  display: flex;
+  flex-flow: row;
+  margin-top:0.2rem;
+}
+ol.leaderboard--wrapper li div[class*="leaderboard--item--header"]{
+  min-width: 100px;
+  color: #00000000;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  min-height:50px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+ol.leaderboard--wrapper li div.leaderboard--item--header--users{
+  flex:3;
+  background-image: url(images/logo/players.png);
+}
+ol.leaderboard--wrapper li div.leaderboard--item--header--scores{
+  flex:2;
+  background-image: url(images/logo/scores.png);
+}
+ol.leaderboard--wrapper li div{
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+}
+ol.leaderboard--wrapper li div.leaderboard--item--score{
+  flex:2;
+  background-image: url(images/things/clock4.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  color: #000;
+  text-shadow: 1px 1px 1px #fff,
+              -1px -1px 1px #fff,
+              1px -1px 1px #fff,
+              -1px 1px 1px #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+ol.leaderboard--wrapper li div.leaderboard--item--user{
+  flex:3;
+  font-family: 'Lacquer', cursive;
+  text-transform: uppercase;
+  min-height: 4.5rem;
+  font-size: 1.25rem;
+  background-image: url(images/wood/wood10.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000,
+              -1px -1px 1px #000,
+              1px -1px 1px #000,
+              -1px 1px 1px #000;
+}
+.leaderboard--button--back {
+  min-width: 200px;
+  color: #00000000;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  min-height:75px;
+  background: url(images/logo/back.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.leaderboard--button--back:hover {
+  transform: rotateZ(-5deg) scale(1.1);
+  transition: transform ease-in-out 0.15s;
+}
+
+/* end leaderboards */
+/* **************** */
+
+
+
+
 /* main menu */
 
 .mainmenu a {
@@ -292,6 +404,21 @@ label { margin-right: 10px; }
   margin-right:20%;
   align-self: flex-end;
   transform: scale(1.2);
+}
+.img--leaderboard {
+  max-width: 66%;
+}
+
+.mainmenu div.section--column .leaderboard--wrap {
+  width:40%;
+  margin-top: 1rem;
+}
+.mainmenu .leaderboard--wrap a {
+  width: 100%;
+  display: flex;
+  flex-flow:row;
+  align-items: center;
+  justify-content: center;
 }
 
 .mainmenu .section--column {
