@@ -5,10 +5,12 @@ import MOLE_CONTEXT from '../context/MoleContext';
 class LeaderboardForm extends Component {
     static contextType = MOLE_CONTEXT;
     state = {
-        submitted: false
+        submitted: false,
+        submitPending: false
     }
     handleSubmit = (e) => {
         e.preventDefault();
+        if (this.state.submitted || this.state.submitPending) return;
         const form = new FormData(e.target);
         const user_name = form.get("user_name");
         if ( typeof user_name === "string" && user_name.length > 0 ) this.submitScore(user_name);
@@ -18,6 +20,9 @@ class LeaderboardForm extends Component {
         if ( this.state.submitted ) {
             this.afterSubmit();
         } else {
+            this.setState({
+                submitPending: true
+            });
             const options = {
                 method: 'POST',
                 mode: 'cors',
@@ -36,12 +41,13 @@ class LeaderboardForm extends Component {
     afterSubmit = () => {
         this.setState({
             submitted: true,
-            points: 0
+            submitPending: false
         })
+        this.context.gameReset();
         this.props.history.replace('/test-wam/leaderboard');
     }
     componentDidMount(){
-        if ( this.context.points < 100 ) this.props.history.replace('/test-wam/leaderboard');
+        if ( this.context.points < this.context.moleCount ) this.props.history.replace('/test-wam/leaderboard');
     }
     render(){
         return(<form onSubmit={this.handleSubmit}>

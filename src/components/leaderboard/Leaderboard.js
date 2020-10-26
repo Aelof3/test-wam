@@ -29,8 +29,9 @@ class Leaderboard extends Component {
         this.getAllScores();
     }
     render(){
+        const scores = (typeof this.state.scores === "object") ? this.state.scores : [];
         return(<>
-            {this.state.scores.map(score=>{
+            {scores.map(score=>{
                 return <div key={score.score_id}>
                     <p>User: {score.user_name} | Score: {score.score}</p>
                 </div>

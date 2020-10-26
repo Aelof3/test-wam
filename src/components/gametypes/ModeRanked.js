@@ -33,7 +33,7 @@ class ModeRanked extends Component {
         // otherwise run end of game menu
         this.setState({
             interval: setInterval(()=>{
-                if (this.context.points < 100) {
+                if (this.context.points < this.context.moleCount) {
                     this.setState({
                         timer: this.state.timer + 1
                     })
