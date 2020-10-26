@@ -44,14 +44,14 @@ class LeaderboardForm extends Component {
             submitPending: false
         })
         this.context.gameReset();
-        this.props.history.replace('/test-wam/leaderboard');
+        this.props.history.replace('/wam/leaderboard');
     }
     handleClick = (e) => {
         e.preventDefault();
-        this.props.history.replace('/test-wam/');
+        this.props.history.replace('/wam/');
     }
     componentDidMount(){
-        if ( this.context.points < this.context.moleCount ) this.props.history.replace('/test-wam/leaderboard');
+        if ( this.context.points < this.context.moleCount ) this.props.history.replace('/wam/leaderboard');
     }
     render(){
         return(<form className="leaderboard--form" onSubmit={this.handleSubmit}>

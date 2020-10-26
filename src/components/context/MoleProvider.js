@@ -43,7 +43,7 @@ class MOLEPROVIDER extends Component {
     }
     handleClick = (e) => {
         e.preventDefault();
-        this.props.history.replace('/test-wam/');
+        this.props.history.replace('/wam/');
     }
     popUpMole = (moles,m) => {
         moles[m].burrowed = false;

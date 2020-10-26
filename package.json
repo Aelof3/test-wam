@@ -11,7 +11,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3"
   },
-  "homepage": "https://aelof3.github.io/test-wam",
+  "homepage": "https://aelof3.github.io/wam",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

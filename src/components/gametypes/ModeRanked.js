@@ -66,7 +66,7 @@ class ModeRanked extends Component {
         // generate end of game menu
         this.context.gameEnd();
         this.context.setFinalTime( this.state.timer );
-        this.props.history.replace('/test-wam/leaderboard/form');
+        this.props.history.replace('/wam/leaderboard/form');
     }
 
     componentDidMount(){

@@ -1,7 +1,7 @@
 # WHACK-A-MOLE 3D
 ***Made by Richard Folea***
 ___
-***[Live Demo](https://aelof3.github.io/test-wam/)***
+***[Live Demo](https://aelof3.github.io/wam/)***
 ___
 ![img1](readme_img_1.jpg)
 

@@ -12,7 +12,7 @@ class MainMenu extends Component {
         let self = this;
         window.addEventListener('click',function(e){
             const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
-            if (isFirefox) self.props.history.replace('/test-wam/app');
+            if (isFirefox) self.props.history.replace('/wam/app');
         })
     }
     render(){
@@ -23,12 +23,12 @@ class MainMenu extends Component {
                     <img className="img--3d" alt="3d" src={threeD} />
                     <div className="section--row">
                         <div className="img--wrap"><img className="img--hammer" alt="hammer" src={hammer} /></div>
-                        <Link to="/test-wam/app">
+                        <Link to="/wam/app">
                             <img className="img--startbutton" alt="startbutton" src={startbutton} />
                         </Link>
                     </div>
                     <div className="section--row leaderboard--wrap">
-                        <Link to="/test-wam/leaderboard">
+                        <Link to="/wam/leaderboard">
                             <img className="img--leaderboard" alt="leaderboard" src={leaderboard} />
                         </Link>
                     </div>
