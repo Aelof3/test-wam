@@ -23,6 +23,10 @@
   --mh: -144px;
 }
 
+:focus:not(:hover) {
+  outline: 1px solid #08e !important;
+}
+
 * {
   user-select: none; 
   box-sizing: border-box ; 
@@ -259,6 +263,70 @@ label { margin-right: 10px; }
 
 
 
+/* leaderboard form */
+.leaderboard--form {
+  display: flex;
+  flex-flow:column;
+  align-items: center;
+  justify-content: center;
+}
+.leaderboard--form .leaderboard--form--username--wrapper {
+  background-color: #fff;
+  box-shadow: 0 5px 15px #66666666;
+  padding: 1rem 2rem;
+}
+.leaderboard--form .leaderboard--form--username--wrapper label{
+  color: #555;
+}
+.leaderboard--form .leaderboard--form--username--wrapper input[type="text"]{
+  border:none;
+  box-shadow:none;
+  outline:none;
+  border-bottom: 1px solid #666;
+}
+.leaderboard--form .leaderboard--form--score {
+  background-image: url(images/logo/yourscore3.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center; 
+  min-height: 175px;
+  min-width: 250px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000,
+              -1px -1px 1px #000,
+              1px -1px 1px #000,
+              -1px 1px 1px #000;
+  font-size: 1.5rem;
+}
+.leaderboard--form .leaderboard--form--button--submitscore {
+  min-width: 200px;
+  color: #00000000;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  min-height:75px;
+  margin-top: 2rem;
+  background: url(images/logo/submitscore.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.leaderboard--form .leaderboard--form--button--submitscore:hover {
+  transform: rotateZ(-5deg) scale(1.1);
+  transition: transform ease-in-out 0.15s; 
+}
+.leaderboard--form button.leaderboard--button--back--small {
+  min-width: 100px;
+}
+/* end leaderboard form */
+/* ******************** */
+
+
+
+
 /* leaderboards */
 
 ol.leaderboard--wrapper {
@@ -330,7 +398,7 @@ ol.leaderboard--wrapper li div.leaderboard--item--user{
               1px -1px 1px #000,
               -1px 1px 1px #000;
 }
-.leaderboard--button--back {
+[class*="button--back"] {
   min-width: 200px;
   color: #00000000;
   outline: none;
@@ -342,7 +410,7 @@ ol.leaderboard--wrapper li div.leaderboard--item--user{
   background-size: contain;
   background-position: center;
 }
-.leaderboard--button--back:hover {
+[class*="button--back"]:hover {
   transform: rotateZ(-5deg) scale(1.1);
   transition: transform ease-in-out 0.15s;
 }

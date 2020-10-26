@@ -32,7 +32,6 @@ class App extends React.Component {
   }
 
   componentDidMount(){
-    console.log(this);
     document.body.classList.add("mainmenu--body")
     window.addEventListener("keydown", (e)=>{this.handleEvent(e.key)}, false);
   }

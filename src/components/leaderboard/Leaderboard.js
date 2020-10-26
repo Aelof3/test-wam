@@ -44,6 +44,7 @@ class Leaderboard extends Component {
                 })}
             </ol>
             <button
+                tabIndex="1"
                 className="leaderboard--button--back"
                 onClick={this.handleClick}
             >back</button>

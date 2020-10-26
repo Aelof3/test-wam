@@ -41,7 +41,10 @@ class MOLEPROVIDER extends Component {
             });
         }, 500 )
     }
-
+    handleClick = (e) => {
+        e.preventDefault();
+        this.props.history.replace('/test-wam/');
+    }
     popUpMole = (moles,m) => {
         moles[m].burrowed = false;
         this.setState({
@@ -101,7 +104,8 @@ class MOLEPROVIDER extends Component {
                 gameStart: this.gameStart,
                 gameEnd: this.gameEnd,
                 setFinalTime: this.setFinalTime,
-                gameReset: this.gameReset
+                gameReset: this.gameReset,
+                handleClick: this.handleClick
             }}>
                 {this.props.children}
             </MOLE_CONTEXT.Provider>

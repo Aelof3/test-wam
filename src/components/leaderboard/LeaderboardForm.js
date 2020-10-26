@@ -35,7 +35,7 @@ class LeaderboardForm extends Component {
                 body: JSON.stringify({user_name:user_name,score:this.context.timer})
             }
             fetch(`${this.context.RESTAPI}/scores`,{...options})
-                .then(r=>self.afterSubmit()) // will use history to push to leaderboard page with updated scores
+                .then(r=>self.afterSubmit())
         }
     }
     afterSubmit = () => {
@@ -46,14 +46,28 @@ class LeaderboardForm extends Component {
         this.context.gameReset();
         this.props.history.replace('/test-wam/leaderboard');
     }
+    handleClick = (e) => {
+        e.preventDefault();
+        this.props.history.replace('/test-wam/');
+    }
     componentDidMount(){
         if ( this.context.points < this.context.moleCount ) this.props.history.replace('/test-wam/leaderboard');
     }
     render(){
-        return(<form onSubmit={this.handleSubmit}>
-            <label htmlFor="user_name">Your Name:</label>
-            <input type="text" required name="user_name" id="user_name"/>
-            <button type="submit">Submit</button>
+        return(<form className="leaderboard--form" onSubmit={this.handleSubmit}>
+            <div className="section--row">
+                <h3 className="leaderboard--form--score">Your Score: {this.context.timer}</h3>
+            </div>
+            <div className="section--row leaderboard--form--username--wrapper">
+                <label htmlFor="user_name">Your Name:</label>
+                <input type="text" required name="user_name" autoFocus={true} tabIndex="1" id="user_name"/>
+            </div>
+            <button className="leaderboard--form--button--submitscore" tabIndex="1" type="submit">Submit</button>
+            <button
+                tabIndex="1"
+                className="leaderboard--button--back--small"
+                onClick={this.handleClick}
+            >back</button>
         </form>)
     }
 }
