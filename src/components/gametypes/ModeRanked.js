@@ -83,7 +83,7 @@ class ModeRanked extends Component {
         }
         fetch(`${this.context.RESTAPI}/auth`,{...options})
             .then(r=>{
-                this.props.history.replace('/wam/leaderboard/form');
+                this.props.history.replace('/leaderboard/form');
             })
     }
 
@@ -91,7 +91,7 @@ class ModeRanked extends Component {
         this.context.refreshToken(token);
         console.log(token);
         if (this.context.token === null) {
-            this.props.history.replace('/wam/');
+            this.props.history.replace('/');
         } else {
             this.countdown(()=>{
                 clearInterval( this.state.interval );

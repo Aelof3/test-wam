@@ -14,7 +14,7 @@ class Leaderboard extends Component {
             .then(r => this.setScores(r))
     }
     getUserScores = (user) => {
-        // api call to get scores of user
+        // TODO: api call to get scores of user
     }
     setScores = (scores) => {
         this.setState({

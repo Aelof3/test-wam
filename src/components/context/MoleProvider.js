@@ -19,7 +19,7 @@ class MOLEPROVIDER extends Component {
         RESTAPI: 'https://floating-crag-15121.herokuapp.com'
     }
     bonkMole = (mole,e) => {
-        if (!e.isTrusted) return;
+        //if (!e.isTrusted) return;
         const p = mole.burrowed || mole.bonked ? 0 : 1;
         const moles = this.state.moles.map( m => {
             if ( m.i !== mole.i ) return m;
@@ -45,7 +45,7 @@ class MOLEPROVIDER extends Component {
     }
     handleClick = (e) => {
         e.preventDefault();
-        this.props.history.replace('/wam/');
+        this.props.history.replace('/');
     }
     popUpMole = (moles,m) => {
         moles[m].burrowed = false;

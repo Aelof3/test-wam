@@ -47,23 +47,23 @@ class App extends React.Component {
         <div className="App" tabIndex={-1}>
             <Route 
               exact 
-              path="/wam" 
+              path="/" 
               render={()=><MainMenu />} />
             <Route 
               exact 
-              path="/wam/app" 
+              path="/app" 
               render={()=><ModeRanked >
                   <Cube cubeFace={this.state.face} />
                   <GUI handleButtonClick={this.handleEvent} face={this.state.face} />
                 </ModeRanked> } />
             <Route 
               exact
-              path="/wam/leaderboard"
+              path="/leaderboard"
               render={()=><Leaderboard />}
             />
             <Route 
               exact
-              path="/wam/leaderboard/form"
+              path="/leaderboard/form"
               render={()=><LeaderboardForm />}
             />
         </div>
