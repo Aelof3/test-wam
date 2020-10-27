@@ -15,6 +15,18 @@
 /* font-family: 'Lacquer', cursive; */
 @import url('https://fonts.googleapis.com/css2?family=Hanalei&display=swap');
 /* font-family: 'Hanalei', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+/* font-family: 'Bungee Shade', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Jacques+Francois+Shadow&display=swap');
+/* font-family: 'Jacques Francois Shadow', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Kranky&display=swap');
+/* font-family: 'Kranky', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap');
+/* font-family: 'Londrina Outline', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Sketch&display=swap');
+/* font-family: 'Londrina Sketch', cursive; */
+
+
 
 
 :root {
@@ -518,6 +530,7 @@ div.gui--wrap ul {
 }
 
 div.gui--wrap ul li {
+  position: relative;
   margin:0.5rem;
   width: calc(100% / 6 - 1rem);
   height: calc(100% / 6 - 1rem);
@@ -549,24 +562,59 @@ div.gui--wrap ul li button{
   text-shadow: 2px 2px 5px #000;
   cursor: pointer;
 }
-
+div.gui--wrap ul li:after{
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight:bold;
+  font-size: 2.5rem;
+  font-family: 'Londrina Sketch', cursive;
+  color: #fff;
+  text-shadow: 0px 0px 15px #000,
+  0px 0px 15px #000;
+}
 div.gui--wrap ul li:nth-child(1){
   background-image: url('./images/faces/face1a.jpg');
+}
+div.gui--wrap ul li:nth-child(1):after{
+  content: "1";
 }
 div.gui--wrap ul li:nth-child(2){
   background-image: url('./images/faces/face2a.jpg');
 }
+div.gui--wrap ul li:nth-child(2):after{
+  content: "2";
+}
 div.gui--wrap ul li:nth-child(3){
   background-image: url('./images/faces/face3a.jpg');
+}
+div.gui--wrap ul li:nth-child(3):after{
+  content: "3";
 }
 div.gui--wrap ul li:nth-child(4){
   background-image: url('./images/faces/face4a.jpg');
 }
+div.gui--wrap ul li:nth-child(4):after{
+  content: "4";
+}
 div.gui--wrap ul li:nth-child(5){
   background-image: url('./images/faces/face5a.jpg');
 }
+div.gui--wrap ul li:nth-child(5):after{
+  content: "5";
+}
 div.gui--wrap ul li:nth-child(6){
   background-image: url('./images/faces/face6a.jpg');
+}
+div.gui--wrap ul li:nth-child(6):after{
+  content: "6";
 }
 
 div.gui--wrap ul li div.mole--dot {

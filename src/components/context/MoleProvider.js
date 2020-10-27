@@ -13,6 +13,7 @@ class MOLEPROVIDER extends Component {
         popupInterval: 1000,
         moleCount: 100,
         prefaceClass: true,
+        authtoken:null,
         timer: 0,
         //RESTAPI: 'http://localhost:8000'
         RESTAPI: 'https://floating-crag-15121.herokuapp.com'
@@ -58,7 +59,11 @@ class MOLEPROVIDER extends Component {
             });
         }, this.state.popupDuration )
     }
-
+    refreshToken = ( authtoken ) => {
+        this.setState({
+            authtoken
+        })
+    }
     stepSequence = ( ) => {
         // create sequence to randomly pop moles up
         const burrowedMoles = this.state.moles.filter( mole => mole.burrowed ).map( mole => mole.i );
@@ -106,7 +111,8 @@ class MOLEPROVIDER extends Component {
                 gameEnd: this.gameEnd,
                 setFinalTime: this.setFinalTime,
                 gameReset: this.gameReset,
-                handleClick: this.handleClick
+                handleClick: this.handleClick,
+                refreshToken: this.refreshToken
             }}>
                 {this.props.children}
             </MOLE_CONTEXT.Provider>

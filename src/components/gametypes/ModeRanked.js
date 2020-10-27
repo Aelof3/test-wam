@@ -66,21 +66,51 @@ class ModeRanked extends Component {
         // generate end of game menu
         this.context.gameEnd();
         this.context.setFinalTime( this.state.timer );
-        this.props.history.replace('/wam/leaderboard/form');
+        const options = {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache', 
+            headers: {
+            'Content-Type': 'application/json'
+            },
+            redirect: 'follow',
+            referrerPolicy: 'no-referrer', 
+            body: JSON.stringify({
+                points: this.context.points,
+                score:this.context.timer,
+                authtoken:this.context.authtoken
+            })
+        }
+        fetch(`${this.context.RESTAPI}/auth`,{...options})
+            .then(r=>{
+                this.props.history.replace('/wam/leaderboard/form');
+            })
     }
 
+    handleAuthToken = (token) => {
+        this.context.refreshToken(token);
+        console.log(token);
+        if (this.context.token === null) {
+            this.props.history.replace('/wam/');
+        } else {
+            this.countdown(()=>{
+                clearInterval( this.state.interval );
+                this.context.gameStart();
+                this.timer( ()=>{
+                    this.stopTimer();
+                    this.endOfGame();
+                })
+            })
+        }
+    }
+    
     componentDidMount(){
         const h = document.querySelector('html');
         h.requestFullscreen();
         // run countdown then context gameStart
-        this.countdown(()=>{
-            clearInterval( this.state.interval );
-            this.context.gameStart();
-            this.timer( ()=>{
-                this.stopTimer();
-                this.endOfGame();
-            })
-        })
+        fetch(`${this.context.RESTAPI}/auth`)
+            .then(r => r.json())
+            .then(r => this.handleAuthToken(r.authtoken))
     }
     
     render(){

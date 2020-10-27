@@ -32,7 +32,11 @@ class LeaderboardForm extends Component {
                 },
                 redirect: 'follow',
                 referrerPolicy: 'no-referrer', 
-                body: JSON.stringify({user_name:user_name,score:this.context.timer})
+                body: JSON.stringify({
+                    user_name:user_name,
+                    score:this.context.timer,
+                    authtoken:this.context.authtoken
+                })
             }
             fetch(`${this.context.RESTAPI}/scores`,{...options})
                 .then(r=>self.afterSubmit())
