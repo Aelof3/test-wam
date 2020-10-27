@@ -23,7 +23,7 @@ class Leaderboard extends Component {
     }
     handleClick = (e) => {
         e.preventDefault();
-        this.props.history.replace('/wam/');
+        this.props.history.replace('/');
     }
     componentDidMount(){
         this.getAllScores();
