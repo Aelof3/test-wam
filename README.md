@@ -9,8 +9,8 @@ ___
 Click `START GAME` on the main screen to begin
 Click `LEADERBOARD` on the main screen to see high scores
 #### CONTROLS:  
-**PC:** use the number keys `1-6` to rotate to each labeled cube side, or, click the buttons at the bottom that correspond to each side
-**MOBILE:** tap the buttons at the bottom to switch to the matching side
+**PC:** use the number keys `1-6` to rotate to each labeled cube side, or, click the buttons at the bottom that correspond to each side  
+**MOBILE:** tap the buttons at the bottom to switch to the matching side  
 
 > *Red dots in the corner of the bottom buttons indicate at least one mole present on that side*
 > ![img2](static/readme_img_3.jpg)  
