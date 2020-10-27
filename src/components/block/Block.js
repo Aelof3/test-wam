@@ -33,7 +33,7 @@ class Block extends Component {
     render(){
         return (
             <div 
-                onClick={()=>this.context.bonkMole(this.props.moles[this.props.i])}
+                onClick={(e)=>this.context.bonkMole(this.props.moles[this.props.i],e)}
                 className={this.state.className}
             >
                 <div className="block">

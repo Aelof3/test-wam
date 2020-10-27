@@ -17,7 +17,8 @@ class MOLEPROVIDER extends Component {
         //RESTAPI: 'http://localhost:8000'
         RESTAPI: 'https://floating-crag-15121.herokuapp.com'
     }
-    bonkMole = (mole) => {
+    bonkMole = (mole,e) => {
+        if (!e.isTrusted) return;
         const p = mole.burrowed || mole.bonked ? 0 : 1;
         const moles = this.state.moles.map( m => {
             if ( m.i !== mole.i ) return m;
