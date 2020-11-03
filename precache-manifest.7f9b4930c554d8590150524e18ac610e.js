@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "251586d36fe0dbebb2b380b502eb925e",
+    "revision": "6ac7b9c72a11b77b4deeaf6dd72045f7",
     "url": "/wam/index.html"
   },
   {
-    "revision": "e2f59090bf4f18400588",
+    "revision": "639615d33bb7fdd8df03",
     "url": "/wam/static/css/main.8ba26d02.chunk.css"
   },
   {
-    "revision": "f240e40e02cbcde4e2b0",
-    "url": "/wam/static/js/2.af16d08d.chunk.js"
+    "revision": "f5512d8da7522ae71972",
+    "url": "/wam/static/js/2.8dcac5f7.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/wam/static/js/2.af16d08d.chunk.js.LICENSE.txt"
+    "url": "/wam/static/js/2.8dcac5f7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e2f59090bf4f18400588",
-    "url": "/wam/static/js/main.a22b95dd.chunk.js"
+    "revision": "639615d33bb7fdd8df03",
+    "url": "/wam/static/js/main.7cff21f4.chunk.js"
   },
   {
     "revision": "2370c56242bb948c1e1c",
@@ -34,6 +34,22 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "3c169248c364b6f4c7b20b79101e34ef",
     "url": "/wam/static/media/backgrounda.3c169248.png"
+  },
+  {
+    "revision": "3660d2a7cd770aa20e0e611446cfc2fc",
+    "url": "/wam/static/media/bonk1.3660d2a7.mp3"
+  },
+  {
+    "revision": "a045eecf169b292e6c9279358c1c21cf",
+    "url": "/wam/static/media/bonk2.a045eecf.mp3"
+  },
+  {
+    "revision": "c2ff86d2aa06419764fcdadc414eab22",
+    "url": "/wam/static/media/buttonclick1.c2ff86d2.mp3"
+  },
+  {
+    "revision": "7cdd8ea716f7abb9b42788cc8884bc36",
+    "url": "/wam/static/media/buttonclick2.7cdd8ea7.mp3"
   },
   {
     "revision": "1b115054fd5b7062099e2687911902ae",
@@ -86,6 +102,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "908de49089710ab6ba4f93c2f8aa0bd9",
     "url": "/wam/static/media/logo8.908de490.png"
+  },
+  {
+    "revision": "9bbad32e51882d0159f61a072eda90fe",
+    "url": "/wam/static/media/music1.9bbad32e.mp3"
+  },
+  {
+    "revision": "f5da47ffba24bcede33c1b21125929cd",
+    "url": "/wam/static/media/music2.f5da47ff.mp3"
   },
   {
     "revision": "36fb392ac84e145fbb352865c548cc7b",
