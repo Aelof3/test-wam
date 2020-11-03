@@ -8,6 +8,7 @@ import MOLE_CONTEXT from './components/context/MoleContext';
 import MOLEPROVIDER from './components/context/MoleProvider';
 import Leaderboard from './components/leaderboard/Leaderboard';
 import LeaderboardForm from './components/leaderboard/LeaderboardForm';
+import sounds from './js/sounds';
 
 class App extends React.Component {
   static contextType = MOLE_CONTEXT;
@@ -26,6 +27,9 @@ class App extends React.Component {
   }
 
   handleNumkeyPress = (key) => {
+    const buttonNoise = new Audio(sounds.buttonclicks[0]);
+    buttonNoise.play();
+
     this.setState({
       face: this.state.faces[parseInt(key) - 1]
     })
