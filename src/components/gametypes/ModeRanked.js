@@ -105,8 +105,8 @@ class ModeRanked extends Component {
     }
     
     componentDidMount(){
-        const h = document.querySelector('html');
-        h.requestFullscreen();
+        const h = document.documentElement;
+        if (h.requestFullscreen) h.requestFullscreen();
         // run countdown then context gameStart
         fetch(`${this.context.RESTAPI}/auth`)
             .then(r => r.json())

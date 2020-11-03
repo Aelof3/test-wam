@@ -18,6 +18,7 @@ class Block extends Component {
     }
 
     generateBlockFaces = () => {
+        if (!this.props.faceTextures) return;
         return this.context.faces.map( (face,i) => {
             const t = ( i !== 5 ) ? this.props.faceTextures[this.props.textures[1]] : this.props.faceTextures[this.props.textures[0]];
             return (
@@ -30,7 +31,13 @@ class Block extends Component {
         })
     }
 
+    generateMole = () => {
+        if (!this.props.moles) return;
+        return <Mole mole={this.props.moles[this.props.i]} />
+    }
+
     render(){
+        
         return (
             <div 
                 onClick={(e)=>this.context.bonkMole(this.props.moles[this.props.i],e)}
@@ -39,7 +46,7 @@ class Block extends Component {
                 <div className="block">
                     {this.generateBlockFaces()}
                 </div>
-                <Mole mole={this.props.moles[this.props.i]} />
+                {this.generateMole()}
             </div>
         )
     }

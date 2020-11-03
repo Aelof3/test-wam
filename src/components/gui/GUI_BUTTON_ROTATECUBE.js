@@ -5,6 +5,7 @@ class GUI_BUTTON_ROTATECUBE extends Component{
     static contextType = MOLE_CONTEXT;
 
     moleCheck = () => {
+        if (!this.props.num) return false;
         return this.context.moleLayout[this.context.faces[this.props.id]].moles.filter( m => !this.context.moles[m].burrowed ).length > 0
     }
 

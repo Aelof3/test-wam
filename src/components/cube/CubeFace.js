@@ -15,6 +15,7 @@ class CubeFace extends Component {
     }
 
     generateBlocks = () => {
+        if (!this.props.textures) return;
         return Array(9).fill().map( (n,i)=> {
             return (
                 <Block 
