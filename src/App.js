@@ -9,6 +9,7 @@ import MOLEPROVIDER from './components/context/MoleProvider';
 import Leaderboard from './components/leaderboard/Leaderboard';
 import LeaderboardForm from './components/leaderboard/LeaderboardForm';
 import sounds from './js/sounds';
+import OptionsMenu from './components/options/OptionsMenu';
 
 class App extends React.Component {
   static contextType = MOLE_CONTEXT;
@@ -53,6 +54,10 @@ class App extends React.Component {
               exact 
               path="/" 
               render={()=><MainMenu />} />
+            <Route
+              exact
+              path="/options"
+              render={()=><OptionsMenu />} />
             <Route 
               exact 
               path="/app" 

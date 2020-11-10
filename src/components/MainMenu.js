@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import startbutton from '../images/logo/startbutton2.png';
 import leaderboard from '../images/logo/leaderboard1.png';
+import options from '../images/logo/options.png';
 import logo from '../images/logo/logo8.png';
 import threeD from '../images/logo/3D5.png';
 import hammer from '../images/things/hammer3.png';
@@ -11,15 +12,7 @@ class MainMenu extends Component {
     static contextType = MOLE_CONTEXT;
 
     componentDidMount(){
-        let self = this;
-        let menu = document.getElementById("mainmenu-section")
-        menu.addEventListener('mousemove',function (e){
-            self.context.playSong(0);
-        })
-        window.addEventListener('click',function(e){
-            const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
-            if (isFirefox) self.props.history.replace('/app');
-        })
+        this.context.playSong(0);
     }
     render(){
         return (
@@ -27,15 +20,20 @@ class MainMenu extends Component {
                 <div className="section--column">
                     <img className="img--logo" alt="logo" src={logo} />
                     <img className="img--3d" alt="3d" src={threeD} />
-                    <div className="section--row">
-                        <div className="img--wrap"><img className="img--hammer" alt="hammer" src={hammer} /></div>
-                        <Link to="/app">
+                    <img className="img--hammer" alt="hammer" src={hammer} />
+                    <div className="section--row start--wrap">
+                        <Link className="button--menu" to="/app">
                             <img className="img--startbutton" alt="startbutton" src={startbutton} />
                         </Link>
                     </div>
                     <div className="section--row leaderboard--wrap">
-                        <Link to="/leaderboard">
+                        <Link className="button--menu" to="/leaderboard">
                             <img className="img--leaderboard" alt="leaderboard" src={leaderboard} />
+                        </Link>
+                    </div>
+                    <div className="section--row options--wrap">
+                        <Link className="button--menu" to="/options">
+                            <img className="img--options" alt="options" src={options} />
                         </Link>
                     </div>
                 </div>

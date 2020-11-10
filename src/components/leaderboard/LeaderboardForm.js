@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import MOLE_CONTEXT from '../context/MoleContext';
+import BackButton from '../misc/BackButton';
 
 class LeaderboardForm extends Component {
     static contextType = MOLE_CONTEXT;
@@ -50,10 +51,6 @@ class LeaderboardForm extends Component {
         this.context.gameReset();
         this.props.history.replace('/leaderboard');
     }
-    handleClick = (e) => {
-        e.preventDefault();
-        this.props.history.replace('/');
-    }
     componentDidMount(){
         if ( this.context.points < this.context.moleCount ) this.props.history.replace('/leaderboard');
     }
@@ -67,11 +64,7 @@ class LeaderboardForm extends Component {
                 <input type="text" required name="user_name" autoFocus={true} tabIndex="1" id="user_name"/>
             </div>
             <button className="leaderboard--form--button--submitscore" tabIndex="1" type="submit">Submit</button>
-            <button
-                tabIndex="1"
-                className="leaderboard--button--back--small"
-                onClick={this.handleClick}
-            >back</button>
+            <BackButton />
         </form>)
     }
 }

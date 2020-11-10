@@ -14,6 +14,7 @@ class ModeRanked extends Component {
     // countdown to start function
     countdown = (callback) => {
         // count down to 0 from n, then do callback
+        this.context.playSong(1);
         this.setState({
             interval: setInterval(()=>{
                 if (this.state.countdown > 0) {

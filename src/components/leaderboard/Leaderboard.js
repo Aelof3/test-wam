@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import MOLE_CONTEXT from '../context/MoleContext';
+import BackButton from '../misc/BackButton';
 
 class Leaderboard extends Component {
     static contextType = MOLE_CONTEXT;
@@ -21,10 +22,6 @@ class Leaderboard extends Component {
             scores
         });
     }
-    handleClick = (e) => {
-        e.preventDefault();
-        this.props.history.replace('/');
-    }
     componentDidMount(){
         this.getAllScores();
     }
@@ -43,11 +40,7 @@ class Leaderboard extends Component {
                     </li>
                 })}
             </ol>
-            <button
-                tabIndex="1"
-                className="leaderboard--button--back"
-                onClick={this.handleClick}
-            >back</button>
+            <BackButton />
         </>)
     }
 }

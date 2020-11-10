@@ -85,7 +85,11 @@ body::before {
 body.mainmenu--body::before {
   background-image: url('./images/backgrounds/backgrounda.png');
 }
-
+button {
+  background:none;
+  border:none;
+  outline: none;
+}
 #root, .App {
   width: 100%;
   height: 100%;
@@ -434,7 +438,10 @@ ol.leaderboard--wrapper li div.leaderboard--item--user{
 
 
 /* main menu */
-
+#mainmenu-section > .section--column {
+  -webkit-transform: translateZ(200px); /* Equivalent or greater than parent's*/
+  transform: translateZ(200px);
+}
 .mainmenu a {
   background: none;
   border: none;
@@ -445,7 +452,7 @@ ol.leaderboard--wrapper li div.leaderboard--item--user{
   width:100%;
 }
 
-.mainmenu a img {
+.mainmenu button img {
   width: 90%;
   object-fit: contain;
   object-position: center;
@@ -471,8 +478,10 @@ ol.leaderboard--wrapper li div.leaderboard--item--user{
 .img--hammer {
   flex: 1;
   transform: scaleX(-1);
-  margin-right: -5rem;
-  width: 100%;
+  width: 20%;
+  position: absolute;
+  top: 25%;
+  left:25%;
 }
 .img--logo {
   width: 100%;
@@ -489,18 +498,30 @@ ol.leaderboard--wrapper li div.leaderboard--item--user{
   max-width: 66%;
 }
 
-.mainmenu div.section--column .leaderboard--wrap {
+.mainmenu div.section--column .start--wrap {
   width:40%;
   margin-top: 1rem;
 }
-.mainmenu .leaderboard--wrap a {
+.mainmenu div.section--column .leaderboard--wrap {
+  width:50%;
+  margin-top: 1rem;
+}
+.mainmenu div.section--column .options--wrap {
+  width:30%;
+  margin-top: 1rem;
+}
+.mainmenu .start--wrap a,
+.mainmenu .leaderboard--wrap a,
+.mainmenu .options--wrap a {
   width: 100%;
   display: flex;
   flex-flow:row;
   align-items: center;
   justify-content: center;
+  border:none;
+  background:none;
+  cursor: pointer;
 }
-
 .mainmenu .section--column {
   height:100%;
 }
@@ -508,7 +529,54 @@ ol.leaderboard--wrapper li div.leaderboard--item--user{
   margin-top:-15rem;
 }
 
+[class*="button--menu"] {
+  position: relative;
+  min-width: 200px;
+  color: #00000000;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  min-height:75px;
+}
+[class*="button--menu"]:hover {
+  transform: rotateZ(-5deg) scale(1.1);
+  transition: transform ease-in-out 0.15s;
+}
+
+[class*="button--menu"] img {
+  max-width: 250px;
+}
+
+
 /* end main menu */
+/* ************* */
+
+/* options menu */
+
+.optionsmenu .section--column {
+  justify-content: center;
+  align-items: center;
+}
+
+[class*="button--options--"] {
+  border: 0.5rem solid #09a;
+  background-color: #eaeaea;
+  color: #09a;
+  font-size: 2rem;
+  margin: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0px 3px 7px #444;
+}
+[class*="button--options--"]:active {
+  box-shadow: 0px 0px 2px #222;
+  transform: scale(0.98);
+}
+
+/* end options menu */
 /* ************* */
 
 
