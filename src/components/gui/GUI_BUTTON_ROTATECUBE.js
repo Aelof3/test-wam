@@ -19,12 +19,15 @@ class GUI_BUTTON_ROTATECUBE extends Component{
     render(){
         return(
             <li className={(this.props.face === this.context.faces[this.props.id] ? "gui--button--selected" : "")}>
-                <button 
-                    onClick={()=>this.props.handleButtonClick(`${this.props.num}`)}
-                    onTouchStart={()=>this.props.handleButtonClick(`${this.props.num}`)}
-                >
-                    {this.moleNotification()}
-                </button>
+                <div className="gui--button--wrap">
+                    <button 
+                        className="gui--button"
+                        onClick={()=>this.props.handleButtonClick(`${this.props.num}`)}
+                        onTouchStart={()=>this.props.handleButtonClick(`${this.props.num}`)}
+                    >
+                        {this.moleNotification()}
+                    </button>
+                </div>
             </li>
         )
     }

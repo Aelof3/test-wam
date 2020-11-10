@@ -618,20 +618,31 @@ div.gui--wrap ul li:hover {
   transform: scale(1.1);
 }
 
-div.gui--wrap ul li button{
+div.gui--wrap ul li .gui--button--wrap{
   padding:50% 0;
+  width: 100%;
+  cursor: pointer;
+}
+div.gui--wrap ul li button{
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index: 10;
   font-size: 2rem;
   background: none;
   outline: none;
   border: none;
   width: 100%;
+  height: 100%;
   color: #fff;
   font-weight:bold;
   font-family: 'Roboto', sans-serif;
   text-shadow: 2px 2px 5px #000;
   cursor: pointer;
 }
-div.gui--wrap ul li:after{
+div.gui--wrap ul li::before{
   position: absolute;
   top:0;
   left:0;
@@ -652,37 +663,37 @@ div.gui--wrap ul li:after{
 div.gui--wrap ul li:nth-child(1){
   background-image: url('./images/faces/face1a.jpg');
 }
-div.gui--wrap ul li:nth-child(1):after{
+div.gui--wrap ul li:nth-child(1)::before{
   content: "1";
 }
 div.gui--wrap ul li:nth-child(2){
   background-image: url('./images/faces/face2a.jpg');
 }
-div.gui--wrap ul li:nth-child(2):after{
+div.gui--wrap ul li:nth-child(2)::before{
   content: "2";
 }
 div.gui--wrap ul li:nth-child(3){
   background-image: url('./images/faces/face3a.jpg');
 }
-div.gui--wrap ul li:nth-child(3):after{
+div.gui--wrap ul li:nth-child(3)::before{
   content: "3";
 }
 div.gui--wrap ul li:nth-child(4){
   background-image: url('./images/faces/face4a.jpg');
 }
-div.gui--wrap ul li:nth-child(4):after{
+div.gui--wrap ul li:nth-child(4)::before{
   content: "4";
 }
 div.gui--wrap ul li:nth-child(5){
   background-image: url('./images/faces/face5a.jpg');
 }
-div.gui--wrap ul li:nth-child(5):after{
+div.gui--wrap ul li:nth-child(5)::before{
   content: "5";
 }
 div.gui--wrap ul li:nth-child(6){
   background-image: url('./images/faces/face6a.jpg');
 }
-div.gui--wrap ul li:nth-child(6):after{
+div.gui--wrap ul li:nth-child(6)::before{
   content: "6";
 }
 
