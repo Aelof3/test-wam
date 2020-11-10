@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter } from 'react-router-dom';
-import MainMenu from './OptionsMenu';
+import OptionsMenu from './OptionsMenu';
 
 it('SMOKE TEST: Options Menu component', () => {
   const div = document.createElement('div');

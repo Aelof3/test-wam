@@ -77,13 +77,14 @@ body::before {
   position: absolute;
   top:0;
   left:0;
-  background-image: url('./images/backgrounds/backgrounda.png');
+  background-image: url('./images/backgrounds/background1.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  opacity: 0.75;
 }
 body.mainmenu--body::before {
-  background-image: url('./images/backgrounds/backgrounda.png');
+  background-image: url('./images/backgrounds/background1.jpg');
 }
 button {
   background:none;
@@ -934,153 +935,153 @@ div.countdown {
 
 @keyframes moleUp {
   0% {
-    background: url('./images/sprites/moles/output.png') 0px 0px;
+    background: url('./images/sprites/moles/moles.png') 0px 0px;
     background-size: 600% 800%;
   }
   16% {
-    background: url('./images/sprites/moles/output.png') 0px 0px;
+    background: url('./images/sprites/moles/moles.png') 0px 0px;
     background-size: 600% 800%;
   }
   16.05% {
-    background: url('./images/sprites/moles/output.png') -100% 0px;
+    background: url('./images/sprites/moles/moles.png') -100% 0px;
     background-size: 600% 800%;
   }
   33% {
-    background: url('./images/sprites/moles/output.png') -100% 0px;
+    background: url('./images/sprites/moles/moles.png') -100% 0px;
     background-size: 600% 800%;
   }
   33.05% {
-    background: url('./images/sprites/moles/output.png') -200% 0px;
+    background: url('./images/sprites/moles/moles.png') -200% 0px;
     background-size: 600% 800%;
   }
   50% {
-    background: url('./images/sprites/moles/output.png') -200% 0px;
+    background: url('./images/sprites/moles/moles.png') -200% 0px;
     background-size: 600% 800%;
   }
   50.05% {
-    background: url('./images/sprites/moles/output.png') -300% 0px;
+    background: url('./images/sprites/moles/moles.png') -300% 0px;
     background-size: 600% 800%;
   }
   67% {
-    background: url('./images/sprites/moles/output.png') -300% 0px;
+    background: url('./images/sprites/moles/moles.png') -300% 0px;
     background-size: 600% 800%;
   }
   67.05% {
-    background: url('./images/sprites/moles/output.png') -400% 0px;
+    background: url('./images/sprites/moles/moles.png') -400% 0px;
     background-size: 600% 800%;
   }
   84% {
-    background: url('./images/sprites/moles/output.png') -400% 0px;
+    background: url('./images/sprites/moles/moles.png') -400% 0px;
     background-size: 600% 800%;
   }
   84.05% {
-    background: url('./images/sprites/moles/output.png') -500% 0px;
+    background: url('./images/sprites/moles/moles.png') -500% 0px;
     background-size: 600% 800%;
   }
   100% {
-    background: url('./images/sprites/moles/output.png') -500% 0px;
+    background: url('./images/sprites/moles/moles.png') -500% 0px;
     background-size: 600% 800%;
   }
 }
 
 @keyframes moleDown {
   0% {
-    background: url('./images/sprites/moles/output.png') -500% 0px;
+    background: url('./images/sprites/moles/moles.png') -500% 0px;
     background-size: 600% 800%;
   }
   16% {
-    background: url('./images/sprites/moles/output.png') -500% 0px;
+    background: url('./images/sprites/moles/moles.png') -500% 0px;
     background-size: 600% 800%;
   }
   16.05% {
-    background: url('./images/sprites/moles/output.png') -400% 0px;
+    background: url('./images/sprites/moles/moles.png') -400% 0px;
     background-size: 600% 800%;
   }
   33% {
-    background: url('./images/sprites/moles/output.png') -400% 0px;
+    background: url('./images/sprites/moles/moles.png') -400% 0px;
     background-size: 600% 800%;
   }
   33.05% {
-    background: url('./images/sprites/moles/output.png') -300% 0px;
+    background: url('./images/sprites/moles/moles.png') -300% 0px;
     background-size: 600% 800%;
   }
   50% {
-    background: url('./images/sprites/moles/output.png') -300% 0px;
+    background: url('./images/sprites/moles/moles.png') -300% 0px;
     background-size: 600% 800%;
   }
   50.05% {
-    background: url('./images/sprites/moles/output.png') -200% 0px;
+    background: url('./images/sprites/moles/moles.png') -200% 0px;
     background-size: 600% 800%;
   }
   67% {
-    background: url('./images/sprites/moles/output.png') -200% 0px;
+    background: url('./images/sprites/moles/moles.png') -200% 0px;
     background-size: 600% 800%;
   }
   67.05% {
-    background: url('./images/sprites/moles/output.png') -100% 0px;
+    background: url('./images/sprites/moles/moles.png') -100% 0px;
     background-size: 600% 800%;
   }
   84% {
-    background: url('./images/sprites/moles/output.png') -100% 0px;
+    background: url('./images/sprites/moles/moles.png') -100% 0px;
     background-size: 600% 800%;
   }
   84.05% {
-    background: url('./images/sprites/moles/output.png') 0px 0px;
+    background: url('./images/sprites/moles/moles.png') 0px 0px;
     background-size: 600% 800%;
   }
   100% {
-    background: url('./images/sprites/moles/output.png') 0px 0px;
+    background: url('./images/sprites/moles/moles.png') 0px 0px;
     background-size: 600% 800%;
   }
 }
 
 @keyframes moleBonked {
   0% {
-    background: url('./images/sprites/moles/output.png') 0px -600%;
+    background: url('./images/sprites/moles/moles.png') 0px -100%;
     background-size: 600% 800%;
   }
   16% {
-    background: url('./images/sprites/moles/output.png') 0px -600%;
+    background: url('./images/sprites/moles/moles.png') 0px -100%;
     background-size: 600% 800%;
   }
   16.05% {
-    background: url('./images/sprites/moles/output.png') -100% -600%;
+    background: url('./images/sprites/moles/moles.png') -100% -100%;
     background-size: 600% 800%;
   }
   33% {
-    background: url('./images/sprites/moles/output.png') -100% -600%;
+    background: url('./images/sprites/moles/moles.png') -100% -100%;
     background-size: 600% 800%;
   }
   33.05% {
-    background: url('./images/sprites/moles/output.png') -200% -600%;
+    background: url('./images/sprites/moles/moles.png') -200% -100%;
     background-size: 600% 800%;
   }
   50% {
-    background: url('./images/sprites/moles/output.png') -200% -600%;
+    background: url('./images/sprites/moles/moles.png') -200% -100%;
     background-size: 600% 800%;
   }
   50.05% {
-    background: url('./images/sprites/moles/output.png') 0px -700%;
+    background: url('./images/sprites/moles/moles.png') -300% -100%;
     background-size: 600% 800%;
   }
   67% {
-    background: url('./images/sprites/moles/output.png') 0px -700%;
+    background: url('./images/sprites/moles/moles.png') -300% -100%;
     background-size: 600% 800%;
   }
   67.05% {
-    background: url('./images/sprites/moles/output.png') -100% -700%;
+    background: url('./images/sprites/moles/moles.png') -400% -100%;
     background-size: 600% 800%;
   }
   84% {
-    background: url('./images/sprites/moles/output.png') -100% -700%;
+    background: url('./images/sprites/moles/moles.png') -400% -100%;
     background-size: 600% 800%;
   }
   84.05% {
-    background: url('./images/sprites/moles/output.png') -200% -700%;
+    background: url('./images/sprites/moles/moles.png') -500% -100%;
     background-size: 600% 800%;
   }
   100% {
-    background: url('./images/sprites/moles/output.png') -200% -700%;
+    background: url('./images/sprites/moles/moles.png') -500% -100%;
     background-size: 600% 800%;
   }
 }
