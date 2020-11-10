@@ -23,33 +23,35 @@ class LeaderboardForm extends Component {
         } else {
             this.setState({
                 submitPending: true
+            },()=>{
+                const options = {
+                    method: 'POST',
+                    mode: 'cors',
+                    cache: 'no-cache', 
+                    headers: {
+                    'Content-Type': 'application/json'
+                    },
+                    redirect: 'follow',
+                    referrerPolicy: 'no-referrer', 
+                    body: JSON.stringify({
+                        user_name:user_name,
+                        score:this.context.timer,
+                        authtoken:this.context.authtoken
+                    })
+                }
+                fetch(`${this.context.RESTAPI}/scores`,{...options})
+                    .then(r=>self.afterSubmit())
             });
-            const options = {
-                method: 'POST',
-                mode: 'cors',
-                cache: 'no-cache', 
-                headers: {
-                'Content-Type': 'application/json'
-                },
-                redirect: 'follow',
-                referrerPolicy: 'no-referrer', 
-                body: JSON.stringify({
-                    user_name:user_name,
-                    score:this.context.timer,
-                    authtoken:this.context.authtoken
-                })
-            }
-            fetch(`${this.context.RESTAPI}/scores`,{...options})
-                .then(r=>self.afterSubmit())
         }
     }
     afterSubmit = () => {
         this.setState({
             submitted: true,
             submitPending: false
+        },()=>{
+            this.context.gameReset();
+            this.props.history.replace('/leaderboard');
         })
-        this.context.gameReset();
-        this.props.history.replace('/leaderboard');
     }
     componentDidMount(){
         if ( this.context.points < this.context.moleCount ) this.props.history.replace('/leaderboard');
