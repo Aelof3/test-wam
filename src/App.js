@@ -24,6 +24,7 @@ class App extends React.Component {
 
   handleEvent = (num) => {
     // this handles both keypresses and clicking the buttons
+    const test = true;
     if ( ["1","2","3","4","5","6"].includes(num) ) this.handleNumkeyPress(num);
   }
 
