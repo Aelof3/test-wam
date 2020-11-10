@@ -84,7 +84,10 @@ class ModeRanked extends Component {
         }
         fetch(`${this.context.RESTAPI}/auth`,{...options})
             .then(r=>{
-                this.props.history.replace('/leaderboard/form');
+                this.context.togglePreface(true)
+                setTimeout(()=>{
+                    this.props.history.replace('/leaderboard/form');
+                },500)
             })
     }
 
@@ -105,6 +108,7 @@ class ModeRanked extends Component {
     }
     
     componentDidMount(){
+        this.context.gameReset();
         const h = document.documentElement;
         if (h.requestFullscreen) h.requestFullscreen();
         // run countdown then context gameStart

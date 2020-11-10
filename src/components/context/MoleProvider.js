@@ -131,6 +131,12 @@ class MOLEPROVIDER extends Component {
         clearInterval( this.state.interval );
     }
 
+    togglePreface = (b=false) => {
+        this.setState({
+            prefaceClass: b
+        })
+    }
+
     render(){
         return (
             <MOLE_CONTEXT.Provider value={{
@@ -143,7 +149,8 @@ class MOLEPROVIDER extends Component {
                 handleClick: this.handleClick,
                 refreshToken: this.refreshToken,
                 playSong: this.playSong,
-                toggleOptions: this.toggleOptions
+                toggleOptions: this.toggleOptions,
+                togglePreface: this.togglePreface
             }}>
                 {this.props.children}
             </MOLE_CONTEXT.Provider>

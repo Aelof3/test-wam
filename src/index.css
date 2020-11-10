@@ -135,6 +135,7 @@ button {
 .App .scene .cube.preface {
   opacity:0;
   transform: translateZ(calc(0.5 * var(--d) )) rotateX(245deg) rotateY(240deg) rotateZ(245deg) scale3d(0.01,0.01,0.01);
+  transition: all ease-out 0.5s;
 }
 
 .cube.show-front  { 
