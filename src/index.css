@@ -110,6 +110,17 @@ button {
 }
 
 
+.button--hover {
+  transition: transform ease-in-out 0.15s;
+}
+
+.button--hover:hover {
+  transform: translateZ(200px) rotateZ(-2deg) scale(1.1);
+  z-index: 100;
+  transition: transform ease-in-out 0.15s;
+}
+
+
 
 
 /* ******************* */
@@ -432,6 +443,16 @@ ol.leaderboard--wrapper li div.leaderboard--item--user{
   transition: transform ease-in-out 0.15s;
 }
 
+ol.leaderboard--wrapper li div.leaderboard--item--user a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+}
+
 /* end leaderboards */
 /* **************** */
 
@@ -552,6 +573,9 @@ ol.leaderboard--wrapper li div.leaderboard--item--user{
 /* end main menu */
 /* ************* */
 
+
+
+
 /* options menu */
 
 .optionsmenu .section--column {
@@ -580,6 +604,9 @@ ol.leaderboard--wrapper li div.leaderboard--item--user{
 /* end options menu */
 /* ************* */
 
+
+
+/* GUI */
 
 form ~ div.gui--wrap {
   display: none;
@@ -708,7 +735,13 @@ div.gui--wrap ul li div.mole--dot {
   border-radius: 50%;
 }
 
+/* end GUI */
+/* ******* */
 
+
+
+
+/* HUD */
 
 div.hud--wrap {
   position: absolute;
@@ -801,6 +834,7 @@ div.hud--wrap .hud--timer div{
   animation: moleBar 2s linear infinite;
 }
 
+
 @keyframes moleBar {
   0% {
     background-position: 0 0;
@@ -824,6 +858,14 @@ div.countdown {
   align-items: center;
   justify-content: center;
 }
+
+
+/* end HUD */
+/* ******* */
+
+
+
+
 /* animated sprites */
 
 .mole {

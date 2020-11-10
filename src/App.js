@@ -7,6 +7,7 @@ import GUI from './components/gui/GUI';
 import MOLE_CONTEXT from './components/context/MoleContext';
 import MOLEPROVIDER from './components/context/MoleProvider';
 import Leaderboard from './components/leaderboard/Leaderboard';
+import LeaderboardUser from './components/leaderboard/LeaderboardUser';
 import LeaderboardForm from './components/leaderboard/LeaderboardForm';
 import sounds from './js/sounds';
 import OptionsMenu from './components/options/OptionsMenu';
@@ -69,6 +70,11 @@ class App extends React.Component {
               exact
               path="/leaderboard"
               render={()=><Leaderboard />}
+            />
+            <Route 
+              exact
+              path="/leaderboard/:userid"
+              render={()=><LeaderboardUser />}
             />
             <Route 
               exact

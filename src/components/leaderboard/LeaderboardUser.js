@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import MOLE_CONTEXT from '../context/MoleContext';
 import BackButton from '../misc/BackButton';
 
-class Leaderboard extends Component {
+class LeaderboardUser extends Component {
     static contextType = MOLE_CONTEXT;
     state = {
         scores: []
     }
-    getAllScores = () => {
+    getScores = () => {
+        const userid = this.props.match.params.userid;
         // api call to get scores
-        fetch(`${this.context.RESTAPI}/scores`)
+        fetch(`${this.context.RESTAPI}/scores/${userid}`)
             .then(r => r.json())
             .then(r => this.setScores(r))
-    }
-    getUserScores = (user) => {
-        // TODO: api call to get scores of user
     }
     setScores = (scores) => {
         this.setState({
@@ -23,30 +21,26 @@ class Leaderboard extends Component {
         });
     }
     componentDidMount(){
-        this.getAllScores();
+        this.getScores();
     }
     render(){
         const scores = (typeof this.state.scores === "object") ? this.state.scores : [];
         return(<>
             <ol className="leaderboard--wrapper">
                 <li className="leaderboard--item">
-                    <div className="leaderboard--item--header--users">Players</div>
+                    <div className="leaderboard--item--header--users">Player</div>
                     <div className="leaderboard--item--header--scores">Scores</div>
                 </li>
                 {scores.map(score=>{
                     return <li className="leaderboard--item" key={score.score_id}>
-                        <div className="leaderboard--item--user button--hover">
-                            <Link to={`/leaderboard/${score.user_name}`}>
-                                {score.user_name}
-                            </Link>
-                        </div>
+                        <div className="leaderboard--item--user">{score.user_name}</div>
                         <div className="leaderboard--item--score">{score.score}</div>
                     </li>
                 })}
             </ol>
-            <BackButton />
+            <BackButton optionalPath="/leaderboard"/>
         </>)
-    }
+    }   //
 }
 
-export default withRouter(Leaderboard);
+export default withRouter(LeaderboardUser);
