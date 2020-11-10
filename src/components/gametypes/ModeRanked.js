@@ -90,7 +90,6 @@ class ModeRanked extends Component {
 
     handleAuthToken = (token) => {
         this.context.refreshToken(token);
-        console.log(token);
         if (this.context.token === null) {
             this.props.history.replace('/');
         } else {
