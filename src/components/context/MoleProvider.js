@@ -20,8 +20,8 @@ class MOLEPROVIDER extends Component {
         authtoken:null,
         current_song:0,
         timer: 0,
-        RESTAPI: 'http://localhost:8000'
-        //RESTAPI: 'https://floating-crag-15121.herokuapp.com'
+        //RESTAPI: 'http://localhost:8000'
+        RESTAPI: 'https://floating-crag-15121.herokuapp.com'
     }
     bonkMole = (mole,e) => {
         if (!e.isTrusted) return;
