@@ -86,7 +86,7 @@ class ModeRanked extends Component {
             .then(r=>{
                 this.context.togglePreface(true)
                 setTimeout(()=>{
-                    this.props.history.replace('/leaderboard/form');
+                    this.props.history.replace('/scoresubmit');
                 },500)
             })
     }

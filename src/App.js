@@ -78,7 +78,7 @@ class App extends React.Component {
             />
             <Route 
               exact
-              path="/leaderboard/form"
+              path="/scoresubmit"
               render={()=><LeaderboardForm />}
             />
         </div>
