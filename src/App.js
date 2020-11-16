@@ -43,7 +43,7 @@ class App extends React.Component {
   }
 
   render(){
-    return (
+    return this.state.context ? (
       <MOLEPROVIDER
         faces={this.state.faces}
         textures={this.context.textures}
@@ -83,7 +83,7 @@ class App extends React.Component {
             />
         </div>
       </MOLEPROVIDER>
-    );
+    ) : <></>;
   }
 }
 

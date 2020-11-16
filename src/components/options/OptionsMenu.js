@@ -24,11 +24,11 @@ class OptionsMenu extends Component {
                     <button 
                         className="button--options--sound"
                         onClick={this.handleSoundClick}    
-                    >Sound: {this.context.options.sounds ? 'on':'off'}</button>
+                    >Sound: {this.context.options && this.context.options.sounds ? 'on':'off'}</button>
                     <button 
                         className="button--options--music"
                         onClick={this.handleMusicClick}
-                    >Music: {this.context.options.music ? 'on':'off'}</button>
+                    >Music: {this.context.options && this.context.options.music ? 'on':'off'}</button>
                     <BackButton />
                 </div>
             </section>

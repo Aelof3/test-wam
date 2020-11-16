@@ -12,7 +12,7 @@ class MainMenu extends Component {
     static contextType = MOLE_CONTEXT;
 
     componentDidMount(){
-        this.context.playSong(0);
+        if (this.context.playSong) this.context.playSong(0);
     }
     render(){
         return (

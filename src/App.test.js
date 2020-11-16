@@ -5,6 +5,6 @@ import App from './App';
 
 it('SMOKE TEST: App component', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<HashRouter><App /></HashRouter>, div);
+  ReactDOM.render(<HashRouter hashType="slash"><App /></HashRouter>, div);
   ReactDOM.unmountComponentAtNode(div);
 });

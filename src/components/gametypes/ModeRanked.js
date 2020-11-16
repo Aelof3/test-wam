@@ -108,7 +108,7 @@ class ModeRanked extends Component {
     }
     
     componentDidMount(){
-        this.context.gameReset();
+        if (this.context.gameReset) this.context.gameReset();
         const h = document.documentElement;
         if (h.requestFullscreen) h.requestFullscreen();
         // run countdown then context gameStart

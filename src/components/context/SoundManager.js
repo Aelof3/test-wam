@@ -6,8 +6,8 @@ const songs = [
 ]
 songs[0].loop = true
 songs[1].loop = true
-songs[0].pause()
-songs[1].pause()
+if (songs[0].pause) songs[0].pause()
+if (songs[1].pause) songs[1].pause()
 
 const bonk = () => {
     const b = getRandomInt(0,sounds.bonks.length - 1)
@@ -16,17 +16,17 @@ const bonk = () => {
 }
 
 const playSong_0 = () => {
-    songs[1].pause()
+    if ( songs[1].pause ) songs[1].pause()
     if ( songs[0].paused ) songs[0].play()
 }
 const playSong_1 = () => {
-    songs[0].pause()
+    if ( songs[0].pause ) songs[0].pause()
     if ( songs[1].paused ) songs[1].play()
 }
 
 const pauseSongs = () => {
-    songs[0].pause()
-    songs[1].pause()
+    if ( songs[0].pause ) songs[0].pause()
+    if ( songs[1].pause ) songs[1].pause()
 }
 
 const getRandomInt = (min,max) => {
